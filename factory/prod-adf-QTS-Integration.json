@@ -1,0 +1,9 @@
+{
+	"name": "prod-adf-QTS-Integration",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3a5e241c-58fc-488c-af8e-75853f130910",
+		"tenantId": "c9da5151-c686-44ac-b9d1-d7b892b22b4b"
+	}
+}

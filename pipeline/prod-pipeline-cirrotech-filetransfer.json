@@ -1,0 +1,9 @@
+{
+	"name": "prod-pipeline-cirrotech-filetransfer",
+	"properties": {
+		"folder": {
+			"name": "Integrations"
+		},
+		"annotations": []
+	}
+}

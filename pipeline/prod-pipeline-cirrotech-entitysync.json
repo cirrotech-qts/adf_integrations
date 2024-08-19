@@ -1,0 +1,9 @@
+{
+	"name": "prod-pipeline-cirrotech-entitysync",
+	"properties": {
+		"folder": {
+			"name": "Integrations"
+		},
+		"annotations": []
+	}
+}

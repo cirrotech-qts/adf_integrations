@@ -1,0 +1,17 @@
+{
+	"name": "QTS_SFTP_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "QTS_SFTP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation",
+				"folderPath": "/Invoices/Test"
+			}
+		}
+	}
+}

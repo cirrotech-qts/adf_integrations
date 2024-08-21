@@ -1,0 +1,490 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "QTS_EV14_TEST",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "timestamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Search Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Name 2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Address 2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Contact",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Phone No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Telex No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Our Account No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Territory Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Global Dimension 1 Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Global Dimension 2 Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Chain Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Budgeted Amount",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 20
+			},
+			{
+				"name": "Credit Limit (LCY)",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 20
+			},
+			{
+				"name": "Customer Posting Group",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Currency Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Customer Price Group",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Language Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Statistics Group",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Payment Terms Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Fin_ Charge Terms Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Salesperson Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Shipment Method Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Shipping Agent Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Place of Export",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Invoice Disc_ Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Customer Disc_ Group",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Country_Region Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Collection Method",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Amount",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 20
+			},
+			{
+				"name": "Blocked",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Invoice Copies",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Last Statement No_",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Print Statements",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Bill-to Customer No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Priority",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Payment Method Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Last Date Modified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Application Method",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Prices Including VAT",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Location Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Fax No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Telex Answer Back",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VAT Registration No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Combine Shipments",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Gen_ Bus_ Posting Group",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Picture",
+				"type": "image"
+			},
+			{
+				"name": "Post Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "County",
+				"type": "nvarchar"
+			},
+			{
+				"name": "E-Mail",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Home Page",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Reminder Terms Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "No_ Series",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tax Area Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tax Liable",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "VAT Bus_ Posting Group",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Reserve",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Block Payment Tolerance",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "IC Partner Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Prepayment _",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 20
+			},
+			{
+				"name": "Primary Contact No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Responsibility Center",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Shipping Advice",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Shipping Time",
+				"type": "varchar"
+			},
+			{
+				"name": "Shipping Agent Service Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Service Zone Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Allow Line Disc_",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Base Calendar Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Copy Sell-to Addr_ to Qte From",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Type of Supply Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Retention _",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 20
+			},
+			{
+				"name": "MCD _",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 20
+			},
+			{
+				"name": "Total Balance (LCY)",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 20
+			},
+			{
+				"name": "CRM GUID",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Imported by Data Connector",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Disallow Deletion",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Cash Flow Payment Terms Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Partner Type",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Preferred Bank Account Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Bias Towards Us",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Account Sponsor",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Preferred Comms",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Document Sending Profile",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GLN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Image",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Total Sales (LCY)",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 20
+			},
+			{
+				"name": "Last Modified Date Time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Privacy Blocked",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Disable Search by Name",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Contact Type",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Validate EU Vat Reg_ No_",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Currency Id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Payment Terms Id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Shipment Method Id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Payment Method Id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Tax Area ID",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Contact ID",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Contact Graph Id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Ship-to Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EORI Number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Company Registration No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Use GLN in Electronic Document",
+				"type": "tinyint",
+				"precision": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "QTS GROUP **LIVE**$Customer"
+		}
+	}
+}

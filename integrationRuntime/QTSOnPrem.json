@@ -1,0 +1,6 @@
+{
+	"name": "QTSOnPrem",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

@@ -1,6 +1,27 @@
 {
 	"name": "prod-pipeline-cirrotech-filetransfer",
 	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Temp",
+					"value": ""
+				}
+			}
+		],
+		"variables": {
+			"Temp": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "Integrations"
 		},

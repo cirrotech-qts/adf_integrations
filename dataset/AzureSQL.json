@@ -1,0 +1,67 @@
+{
+	"name": "AzureSQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlSyncDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "No_",
+				"type": "nvarchar"
+			},
+			{
+				"name": "name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "telephone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "fax",
+				"type": "nvarchar"
+			},
+			{
+				"name": "email",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dateAdded",
+				"type": "timestamp"
+			},
+			{
+				"name": "modifiedDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "customerId",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "currencyId",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "companyAccNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "postcode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "customer_from_BC"
+		}
+	}
+}

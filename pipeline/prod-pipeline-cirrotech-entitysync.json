@@ -24,7 +24,7 @@
 				}
 			},
 			{
-				"name": "Copy SQL data from BC SQL",
+				"name": "Copy SQL data from BC SQL to temp",
 				"type": "Copy",
 				"dependsOn": [
 					{

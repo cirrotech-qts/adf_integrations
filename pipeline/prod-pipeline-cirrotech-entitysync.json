@@ -26,8 +26,6 @@
 			{
 				"name": "Copy SQL data from BC SQL to temp",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Clear SQL tables",
@@ -427,7 +425,10 @@
 				"typeProperties": {
 					"method": "POST",
 					"headers": {
-						"Authorization": "@concat('Bearer ', variables('Syrinx Token'))\n",
+						"Authorization": {
+							"value": "@concat('Bearer ', variables('Syrinx Token'))\n",
+							"type": "Expression"
+						},
 						"Content-Type": "application/json"
 					},
 					"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Customers",

@@ -433,7 +433,8 @@
 				"typeProperties": {
 					"method": "POST",
 					"headers": {
-						"Authorization": "@concat('Bearer ', variables('Syrinx Token'))\n"
+						"Authorization": "@concat('Bearer ', variables('Syrinx Token'))\n",
+						"Content-Type": "application/json"
 					},
 					"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Customers",
 					"connectVia": {
@@ -442,14 +443,15 @@
 					},
 					"body": [
 						{
+							"id": null,
 							"type": "A",
-							"name": "Iain Lennox",
-							"accNo": "1234545z",
+							"name": "ApiCust4",
+							"accNo": "5465ABC",
 							"taxCode": "",
-							"locTaxCode": "p",
+							"locTaxCode": "",
 							"internal": true,
-							"companyType": "ABC",
-							"currencyCode": "GBP",
+							"companyType": "Sole Trader",
+							"currencyCode": "",
 							"address": {
 								"name": "DEPOT",
 								"line1": "Head Office",
@@ -462,10 +464,9 @@
 								"fax": null,
 								"latitude": "51.4591155",
 								"longitude": "-0.9674165",
-								"what3Words": "fixed.almost.years",
 								"directions": null
 							},
-							"countryCode": "K",
+							"countryCode": "",
 							"marketingCategory": "Construction",
 							"prop1": "XYZ",
 							"prop6": "XYZ6",
@@ -485,13 +486,13 @@
 							"creditLimit": 1000,
 							"accountBalance": 500,
 							"email": "",
-							"vatNumber": "",
-							"regNumber": "AB51XYZ",
-							"cisRegNumber": "AB123XYZ",
-							"webSite": "abc.def.co.uk",
-							"salesperson": {
-								"id": 39,
-								"shortname": "PP"
+							"vatNumber": "vat123",
+							"regNumber": "reg123",
+							"cisRegNumber": "cis123",
+							"webSite": "www.test.home.local",
+							"salesPersion": {
+								"id": null,
+								"shortname": "Joe-Peeps"
 							},
 							"paymentTermText": {
 								"id": null

@@ -388,7 +388,8 @@
 								}
 							}
 						],
-						"collectionReference": ""
+						"collectionReference": "$['results']",
+						"mapComplexValuesToString": false
 					}
 				},
 				"inputs": [

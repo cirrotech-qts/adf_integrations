@@ -7,6 +7,10 @@
 			"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "QTSOnPrem",
+			"type": "IntegrationRuntimeReference"
 		}
 	}
 }

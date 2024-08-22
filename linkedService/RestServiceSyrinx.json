@@ -1,0 +1,16 @@
+{
+	"name": "RestServiceSyrinx",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "QTSOnPrem",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

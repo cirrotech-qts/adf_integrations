@@ -348,15 +348,6 @@
 							},
 							{
 								"source": {
-									"path": "$['results'][0]['address']['name']"
-								},
-								"sink": {
-									"name": "name",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "$['results'][0]['address']['postcode']"
 								},
 								"sink": {

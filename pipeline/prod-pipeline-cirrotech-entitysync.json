@@ -247,6 +247,36 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "Get Contacts from Syrinx API",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Token",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"headers": {
+						"Authorization": {
+							"value": "@variables('Syrinx Token')",
+							"type": "Expression"
+						}
+					},
+					"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Contact"
+				}
 			}
 		],
 		"variables": {

@@ -271,7 +271,7 @@
 					"method": "GET",
 					"headers": {
 						"Authorization": {
-							"value": "@variables('Syrinx Token')",
+							"value": "@concat('Bearer ', variables('Syrinx Token'))\n",
 							"type": "Expression"
 						}
 					},

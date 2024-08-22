@@ -243,7 +243,7 @@
 				"typeProperties": {
 					"variableName": "Syrinx Token",
 					"value": {
-						"value": "@activity('Get Syrinx Auth Token').output",
+						"value": "@string(activity('Get Syrinx Auth Token').output.token)",
 						"type": "Expression"
 					}
 				}

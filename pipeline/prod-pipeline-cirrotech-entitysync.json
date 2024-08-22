@@ -185,7 +185,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSQL",
+						"referenceName": "AzureSQL_CustomersFromBC",
 						"type": "DatasetReference"
 					}
 				]
@@ -287,6 +287,8 @@
 			{
 				"name": "Copy Syrinx resposne to SQL",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Customers from Syrinx API",
@@ -319,11 +321,22 @@
 							"supportRFC5988": "true"
 						}
 					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "RestResourceSyrinxCustomers",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSQL_CustomersFromSyrinx",
 						"type": "DatasetReference"
 					}
 				]

@@ -326,7 +326,140 @@
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['results'][0]['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['accNo']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['taxCode']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['locTaxCode']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['internal']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['companyType']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['line1']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['line2']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['line3']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['town']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['county']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['postcode']"
+								},
+								"sink": {
+									"name": "postcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['telephone']"
+								},
+								"sink": {
+									"name": "telephone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['fax']"
+								},
+								"sink": {
+									"name": "fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['address']['customerId']"
+								},
+								"sink": {
+									"name": "customerId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['results'][0]['email']"
+								},
+								"sink": {
+									"name": "email",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
 				},
 				"inputs": [
 					{

@@ -275,7 +275,7 @@
 							"type": "Expression"
 						}
 					},
-					"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Contact"
+					"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Customers"
 				}
 			}
 		],

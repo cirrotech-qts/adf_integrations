@@ -1,0 +1,71 @@
+{
+	"name": "AzureSQL_CustomersFromSyrinx",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlSyncDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "telephone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "fax",
+				"type": "nvarchar"
+			},
+			{
+				"name": "email",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dateAdded",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "modifiedDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "customerId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "currencyId",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "companyAccNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "postcode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "customer_from_Synrix"
+		}
+	}
+}

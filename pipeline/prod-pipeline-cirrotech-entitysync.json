@@ -6,6 +6,8 @@
 				"name": "Clear SQL tables",
 				"description": "Clear all tables before getting data",
 				"type": "SqlServerStoredProcedure",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -26,6 +28,8 @@
 			{
 				"name": "Copy SQL data from BC SQL to temp",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Clear SQL tables",
@@ -247,6 +251,8 @@
 			{
 				"name": "Get Customers from Syrinx API",
 				"type": "WebActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Token",
@@ -281,6 +287,8 @@
 			{
 				"name": "Copy Syrinx resposne to SQL",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Customers from Syrinx API",

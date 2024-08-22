@@ -191,7 +191,7 @@
 				]
 			},
 			{
-				"name": "Syrinx Auth Token",
+				"name": "Get Syrinx Auth Token",
 				"description": "Acquire an auth token using encoded user name and password",
 				"type": "WebActivity",
 				"dependsOn": [
@@ -223,10 +223,37 @@
 						"type": "IntegrationRuntimeReference"
 					}
 				}
+			},
+			{
+				"name": "Token",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Get Syrinx Auth Token",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Syrinx Token",
+					"value": {
+						"value": "@activity('Get Syrinx Auth Token').output",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
 			"Temp": {
+				"type": "String"
+			},
+			"Syrinx Token": {
 				"type": "String"
 			}
 		},

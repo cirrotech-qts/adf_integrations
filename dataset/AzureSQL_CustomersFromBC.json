@@ -1,5 +1,5 @@
 {
-	"name": "AzureSQL",
+	"name": "AzureSQL_CustomersFromBC",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlSyncDB",

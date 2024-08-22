@@ -26,8 +26,6 @@
 			{
 				"name": "Copy SQL data from BC SQL to temp",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Clear SQL tables",
@@ -404,6 +402,95 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Update or Create Customers in Syrinx",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Copy Syrinx resposne to SQL",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"headers": {
+						"Authorization": "@concat('Bearer ', variables('Syrinx Token'))\n"
+					},
+					"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Customers",
+					"connectVia": {
+						"referenceName": "QTSOnPrem",
+						"type": "IntegrationRuntimeReference"
+					},
+					"body": [
+						{
+							"type": "A",
+							"name": "Iain Lennox",
+							"accNo": "1234545z",
+							"taxCode": "",
+							"locTaxCode": "p",
+							"internal": true,
+							"companyType": "ABC",
+							"currencyCode": "GBP",
+							"address": {
+								"name": "DEPOT",
+								"line1": "Head Office",
+								"line2": null,
+								"line3": "UK",
+								"town": "CAVERSHAM",
+								"county": "BERKSHIRE",
+								"postcode": "RG4 5BB",
+								"telephone": "07783022961",
+								"fax": null,
+								"latitude": "51.4591155",
+								"longitude": "-0.9674165",
+								"what3Words": "fixed.almost.years",
+								"directions": null
+							},
+							"countryCode": "K",
+							"marketingCategory": "Construction",
+							"prop1": "XYZ",
+							"prop6": "XYZ6",
+							"prop7": "",
+							"prop8": "",
+							"prop9": "XYZ9",
+							"prop10": "XYZ01",
+							"currentFlag": true,
+							"canUseAnyDepot": true,
+							"onHold": false,
+							"depot": {
+								"name": "Slough",
+								"shortCode": "R",
+								"accountsDept": "02"
+							},
+							"exportToAccounts": false,
+							"creditLimit": 1000,
+							"accountBalance": 500,
+							"email": "",
+							"vatNumber": "",
+							"regNumber": "AB51XYZ",
+							"cisRegNumber": "AB123XYZ",
+							"webSite": "abc.def.co.uk",
+							"salesperson": {
+								"id": 39,
+								"shortname": "PP"
+							},
+							"paymentTermText": {
+								"id": null
+							}
+						}
+					]
+				}
 			}
 		],
 		"variables": {

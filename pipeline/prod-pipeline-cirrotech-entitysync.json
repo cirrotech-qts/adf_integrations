@@ -213,7 +213,7 @@
 				"typeProperties": {
 					"method": "GET",
 					"headers": {
-						"Authorization": "QWRtaW46cGFzc3dvcmQ=",
+						"Authorization": "Basic QWRtaW46cGFzc3dvcmQ=",
 						"Content-Type": "application/json",
 						"Accept": "application/json"
 					},

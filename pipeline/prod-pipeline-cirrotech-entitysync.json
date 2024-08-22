@@ -344,24 +344,6 @@
 							},
 							{
 								"source": {
-									"path": "['address']['id']"
-								},
-								"sink": {
-									"name": "id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['address']['name']"
-								},
-								"sink": {
-									"name": "name",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "['address']['postcode']"
 								},
 								"sink": {
@@ -398,111 +380,7 @@
 							},
 							{
 								"source": {
-									"path": "['depot']['id']"
-								},
-								"sink": {
-									"name": "id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['depot']['name']"
-								},
-								"sink": {
-									"name": "name",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['depot']['address']['id']"
-								},
-								"sink": {
-									"name": "id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['depot']['address']['name']"
-								},
-								"sink": {
-									"name": "name",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['depot']['address']['postcode']"
-								},
-								"sink": {
-									"name": "postcode",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['depot']['address']['telephone']"
-								},
-								"sink": {
-									"name": "telephone",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['depot']['address']['fax']"
-								},
-								"sink": {
-									"name": "fax",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['depot']['address']['customerId']"
-								},
-								"sink": {
-									"name": "customerId",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"path": "['email']"
-								},
-								"sink": {
-									"name": "email",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['createdBy']['id']"
-								},
-								"sink": {
-									"name": "id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['createdBy']['name']"
-								},
-								"sink": {
-									"name": "name",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['createdBy']['serverLogon']"
-								}
-							},
-							{
-								"source": {
-									"path": "['createdBy']['email']"
 								},
 								"sink": {
 									"name": "email",

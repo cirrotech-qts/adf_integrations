@@ -251,6 +251,8 @@
 			{
 				"name": "Get Customers from Syrinx API",
 				"type": "WebActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Token",

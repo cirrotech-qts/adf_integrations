@@ -326,7 +326,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['results']['id']"
+									"path": "$['results'][0]['id']"
 								},
 								"sink": {
 									"name": "id",
@@ -335,7 +335,7 @@
 							},
 							{
 								"source": {
-									"path": "$['results']['name']"
+									"path": "$['results'][0]['name']"
 								},
 								"sink": {
 									"name": "name",
@@ -344,7 +344,7 @@
 							},
 							{
 								"source": {
-									"path": "$['results']['address']['postcode']"
+									"path": "$['results'][0]['address']['postcode']"
 								},
 								"sink": {
 									"name": "postcode",
@@ -353,7 +353,7 @@
 							},
 							{
 								"source": {
-									"path": "$['results']['address']['telephone']"
+									"path": "$['results'][0]['address']['telephone']"
 								},
 								"sink": {
 									"name": "telephone",
@@ -362,7 +362,7 @@
 							},
 							{
 								"source": {
-									"path": "$['results']['address']['fax']"
+									"path": "$['results'][0]['address']['fax']"
 								},
 								"sink": {
 									"name": "fax",
@@ -371,7 +371,7 @@
 							},
 							{
 								"source": {
-									"path": "$['results']['address']['customerId']"
+									"path": "$['results'][0]['address']['customerId']"
 								},
 								"sink": {
 									"name": "customerId",
@@ -380,7 +380,7 @@
 							},
 							{
 								"source": {
-									"path": "$['results']['email']"
+									"path": "$['results'][0]['email']"
 								},
 								"sink": {
 									"name": "email",
@@ -388,7 +388,7 @@
 								}
 							}
 						],
-						"collectionReference": "$['results']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [

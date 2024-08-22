@@ -350,66 +350,11 @@
 							},
 							{
 								"source": {
-									"path": "$['results'][0]['type']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['accNo']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['taxCode']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['locTaxCode']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['internal']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['companyType']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['results'][0]['address']['name']"
 								},
 								"sink": {
 									"name": "name",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['address']['line1']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['address']['line2']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['address']['line3']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['address']['town']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['results'][0]['address']['county']"
 								}
 							},
 							{

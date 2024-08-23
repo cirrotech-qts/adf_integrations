@@ -442,9 +442,9 @@
 							"name": "Customer1",
 							"accNo": "1234545z",
 							"taxCode": "",
-							"locTaxCode": "p",
+							"locTaxCode": "",
 							"internal": true,
-							"companyType": "ABC",
+							"companyType": "",
 							"currencyCode": "GBP",
 							"address": {
 								"name": "DEPOT",
@@ -461,14 +461,14 @@
 								"what3Words": "fixed.almost.years",
 								"directions": null
 							},
-							"countryCode": "K",
-							"marketingCategory": "Construction",
-							"prop1": "XYZ",
-							"prop6": "XYZ6",
+							"countryCode": "",
+							"marketingCategory": "",
+							"prop1": "",
+							"prop6": "",
 							"prop7": "",
 							"prop8": "",
-							"prop9": "XYZ9",
-							"prop10": "XYZ01",
+							"prop9": "XY9",
+							"prop10": "",
 							"currentFlag": true,
 							"canUseAnyDepot": true,
 							"onHold": false,
@@ -486,8 +486,8 @@
 							"cisRegNumber": "AB123XYZ",
 							"webSite": "abc.def.co.uk",
 							"salesperson": {
-								"id": 39,
-								"shortname": "PP"
+								"id": null,
+								"shortname": ""
 							},
 							"paymentTermText": {
 								"id": null

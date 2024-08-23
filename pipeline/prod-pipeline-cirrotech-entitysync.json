@@ -616,6 +616,7 @@
 									"sqlWriterUseTableLock": false
 								},
 								"enableStaging": false,
+								"parallelCopies": 1,
 								"translator": {
 									"type": "TabularTranslator",
 									"mappings": [

@@ -5,10 +5,15 @@
 			"referenceName": "RestServiceSyrinx",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"PageNo": {
+				"type": "int"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "Customers"
+			"relativeUrl": "Customers?pageNo=@{dataset().PageNo}&pageSize=200"
 		},
 		"schema": []
 	}

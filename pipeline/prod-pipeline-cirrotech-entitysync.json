@@ -406,8 +406,6 @@
 			{
 				"name": "Update or Create Customers in Syrinx",
 				"type": "WebActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy Syrinx resposne to SQL",
@@ -440,15 +438,14 @@
 					},
 					"body": [
 						{
-							"id": null,
 							"type": "A",
-							"name": "Iain Lennox",
-							"accNo": "SUP00001",
+							"name": "Customer1",
+							"accNo": "1234545z",
 							"taxCode": "",
-							"locTaxCode": "",
+							"locTaxCode": "p",
 							"internal": true,
-							"companyType": "",
-							"currencyCode": "",
+							"companyType": "ABC",
+							"currencyCode": "GBP",
 							"address": {
 								"name": "DEPOT",
 								"line1": "Head Office",
@@ -461,16 +458,17 @@
 								"fax": null,
 								"latitude": "51.4591155",
 								"longitude": "-0.9674165",
+								"what3Words": "fixed.almost.years",
 								"directions": null
 							},
-							"countryCode": "",
-							"marketingCategory": "",
-							"prop1": "",
-							"prop6": "",
+							"countryCode": "K",
+							"marketingCategory": "Construction",
+							"prop1": "XYZ",
+							"prop6": "XYZ6",
 							"prop7": "",
 							"prop8": "",
-							"prop9": "",
-							"prop10": "",
+							"prop9": "XYZ9",
+							"prop10": "XYZ01",
 							"currentFlag": true,
 							"canUseAnyDepot": true,
 							"onHold": false,
@@ -483,13 +481,13 @@
 							"creditLimit": 1000,
 							"accountBalance": 500,
 							"email": "",
-							"vatNumber": "vat123",
-							"regNumber": "reg123",
-							"cisRegNumber": "cis123",
-							"webSite": "www.test.home.local",
-							"salesPersion": {
-								"id": null,
-								"shortname": "Joe-Peeps"
+							"vatNumber": "",
+							"regNumber": "AB51XYZ",
+							"cisRegNumber": "AB123XYZ",
+							"webSite": "abc.def.co.uk",
+							"salesperson": {
+								"id": 39,
+								"shortname": "PP"
 							},
 							"paymentTermText": {
 								"id": null

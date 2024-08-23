@@ -707,6 +707,95 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "loopCounter",
+								"value": {
+									"value": "@item()\n\n",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [
+								{
+									"activity": "Set variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@equals(mod(item(), 10), 0)\n",
+									"type": "Expression"
+								},
+								"ifTrueActivities": [
+									{
+										"name": "Get Syrinx Auth Token_copy1",
+										"description": "Acquire an auth token using encoded user name and password",
+										"type": "WebActivity",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"method": "GET",
+											"headers": {
+												"Authorization": "Basic QWRtaW46cGFzc3dvcmQ=",
+												"Content-Type": "application/json",
+												"Accept": "application/json"
+											},
+											"url": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Auth",
+											"connectVia": {
+												"referenceName": "QTSOnPrem",
+												"type": "IntegrationRuntimeReference"
+											}
+										}
+									},
+									{
+										"name": "Set variable2",
+										"type": "SetVariable",
+										"dependsOn": [
+											{
+												"activity": "Get Syrinx Auth Token_copy1",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"policy": {
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "Syrinx Token",
+											"value": {
+												"value": "@string(activity('Get Syrinx Auth Token_copy1').output.access_Token)",
+												"type": "Expression"
+											}
+										}
+									}
+								]
+							}
 						}
 					]
 				}

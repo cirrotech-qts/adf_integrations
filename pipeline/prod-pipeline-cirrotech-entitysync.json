@@ -569,7 +569,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "pageNumbers",
+						"activity": "loopCounter",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -734,6 +734,27 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "loopCounter",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "pageNumbers",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "loopCounter",
+					"value": 0
+				}
 			}
 		],
 		"variables": {
@@ -754,6 +775,9 @@
 			},
 			"pageNumbers": {
 				"type": "Array"
+			},
+			"loopCounter": {
+				"type": "Integer"
 			}
 		},
 		"folder": {

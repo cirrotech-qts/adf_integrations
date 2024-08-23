@@ -410,6 +410,8 @@
 			{
 				"name": "Update or Create Customers in Syrinx",
 				"type": "WebActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy Syrinx resposne to SQL",

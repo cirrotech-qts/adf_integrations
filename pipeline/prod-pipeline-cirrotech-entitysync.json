@@ -591,7 +591,14 @@
 						{
 							"name": "Copy Syrinx resposne to SQL_copy1",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "If Condition1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -776,6 +783,64 @@
 										}
 									}
 								]
+							}
+						},
+						{
+							"name": "Get Syrinx Auth Token_copy2",
+							"description": "Acquire an auth token using encoded user name and password",
+							"type": "WebActivity",
+							"dependsOn": [
+								{
+									"activity": "Copy Syrinx resposne to SQL_copy1",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"method": "GET",
+								"headers": {
+									"Authorization": "Basic QWRtaW46cGFzc3dvcmQ=",
+									"Content-Type": "application/json",
+									"Accept": "application/json"
+								},
+								"url": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Auth",
+								"connectVia": {
+									"referenceName": "QTSOnPrem",
+									"type": "IntegrationRuntimeReference"
+								}
+							}
+						},
+						{
+							"name": "Token_copy1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Get Syrinx Auth Token_copy2",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Syrinx Token",
+								"value": {
+									"value": "@string(activity('Get Syrinx Auth Token').output.access_Token)\n",
+									"type": "Expression"
+								}
 							}
 						}
 					]

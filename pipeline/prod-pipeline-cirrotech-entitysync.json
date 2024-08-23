@@ -448,7 +448,7 @@
 							"taxCode": "",
 							"locTaxCode": "",
 							"internal": true,
-							"companyType": "Limited",
+							"companyType": "Individual",
 							"currencyCode": "GBP",
 							"address": {
 								"name": "DEPOT",

@@ -403,9 +403,14 @@
 			{
 				"name": "Update or Create Customers in Syrinx",
 				"type": "WebActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "loopCounter",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -446,7 +451,7 @@
 								"town": "CAVERSHAM",
 								"county": "BERKSHIRE",
 								"postcode": "RG4 5BB",
-								"telephone": "07783022961",
+								"telephone": "07495395817",
 								"fax": null,
 								"latitude": "51.4591155",
 								"longitude": "-0.9674165",
@@ -569,7 +574,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "loopCounter",
+						"activity": "Update or Create Customers in Syrinx",
 						"dependencyConditions": [
 							"Succeeded"
 						]

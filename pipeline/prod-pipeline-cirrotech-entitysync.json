@@ -581,6 +581,7 @@
 						"value": "@variables('pageNumbers')",
 						"type": "Expression"
 					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Copy Syrinx resposne to SQL_copy1",

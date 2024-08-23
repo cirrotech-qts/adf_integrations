@@ -283,8 +283,6 @@
 			{
 				"name": "Copy Syrinx resposne to SQL",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Customers from Syrinx API",

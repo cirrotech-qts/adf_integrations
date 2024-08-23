@@ -446,7 +446,7 @@
 						{
 							"type": "A",
 							"name": "Customer1",
-							"accNo": "1234545z",
+							"accNo": null,
 							"taxCode": "",
 							"locTaxCode": "",
 							"internal": true,

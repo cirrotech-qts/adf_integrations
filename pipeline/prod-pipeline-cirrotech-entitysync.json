@@ -541,20 +541,6 @@
 				}
 			},
 			{
-				"name": "currentPage",
-				"type": "SetVariable",
-				"dependsOn": [],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "currentPage",
-					"value": 1
-				}
-			},
-			{
 				"name": "totalItemCount",
 				"type": "SetVariable",
 				"dependsOn": [

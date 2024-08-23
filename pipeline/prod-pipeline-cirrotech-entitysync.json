@@ -526,7 +526,14 @@
 			{
 				"name": "totalPages",
 				"type": "SetVariable",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "totalItemCount",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"secureOutput": false,
 					"secureInput": false
@@ -534,7 +541,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "totalPages",
-					"value": 112
+					"value": {
+						"value": "@add(div(activity('Get Customers from Syrinx API').output.totalItemCount, activity('Get Customers from Syrinx API').output.pageSize), if(greater(mod(activity('Get Customers from Syrinx API').output.totalItemCount, activity('Get Customers from Syrinx API').output.pageSize), 0), 1, 0))\n",
+						"type": "Expression"
+					}
 				}
 			},
 			{

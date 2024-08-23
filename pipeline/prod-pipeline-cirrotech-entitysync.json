@@ -585,8 +585,6 @@
 						{
 							"name": "Copy Syrinx resposne to SQL_copy1",
 							"type": "Copy",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -600,7 +598,7 @@
 								"source": {
 									"type": "RestSource",
 									"httpRequestTimeout": "00:01:40",
-									"requestInterval": "00.00:00:00.010",
+									"requestInterval": "00.00:00:01.000",
 									"requestMethod": "GET",
 									"additionalHeaders": {
 										"Authorization": {

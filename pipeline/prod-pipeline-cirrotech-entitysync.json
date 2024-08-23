@@ -450,7 +450,7 @@
 							"taxCode": "",
 							"locTaxCode": "",
 							"internal": true,
-							"companyType": "",
+							"companyType": "Limited",
 							"currencyCode": "GBP",
 							"address": {
 								"name": "DEPOT",
@@ -479,9 +479,9 @@
 							"canUseAnyDepot": true,
 							"onHold": false,
 							"depot": {
-								"name": "Slough",
-								"shortCode": "R",
-								"accountsDept": "02"
+								"name": null,
+								"shortCode": null,
+								"accountsDept": null
 							},
 							"exportToAccounts": false,
 							"creditLimit": 1000,
@@ -493,7 +493,7 @@
 							"webSite": "abc.def.co.uk",
 							"salesperson": {
 								"id": null,
-								"shortname": ""
+								"shortname": null
 							},
 							"paymentTermText": {
 								"id": null

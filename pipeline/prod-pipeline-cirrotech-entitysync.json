@@ -410,8 +410,6 @@
 			{
 				"name": "Update or Create Customers in Syrinx",
 				"type": "WebActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy Syrinx resposne to SQL",
@@ -479,9 +477,41 @@
 							"canUseAnyDepot": true,
 							"onHold": false,
 							"depot": {
-								"name": null,
-								"shortCode": null,
-								"accountsDept": null
+								"id": 1,
+								"name": "QTS National HQ",
+								"shortCode": "001",
+								"address": {
+									"id": 2,
+									"name": "Depot",
+									"line1": "Rench Farm",
+									"line2": "Drumclog",
+									"line3": null,
+									"town": "Strathhaven",
+									"county": "South Lanarkshire",
+									"postcode": null,
+									"telephone": "01357 440 364",
+									"fax": null,
+									"latitude": null,
+									"longitude": null,
+									"what3Words": null,
+									"prop1": null,
+									"prop2": null,
+									"prop3": null,
+									"prop4": null,
+									"prop5": null,
+									"prop6": null,
+									"prop7": null,
+									"prop8": null,
+									"prop9": null,
+									"prop10": null,
+									"directions": null,
+									"operatorNotes": null,
+									"customerId": null,
+									"dateCreated": null,
+									"createdByUser": null,
+									"dateModified": null,
+									"modifiedByUser": null
+								}
 							},
 							"exportToAccounts": false,
 							"creditLimit": 1000,

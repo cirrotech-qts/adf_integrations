@@ -283,14 +283,9 @@
 			{
 				"name": "Copy Syrinx resposne to SQL",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Get Customers from Syrinx API",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -408,6 +403,8 @@
 			{
 				"name": "Update or Create Customers in Syrinx",
 				"type": "WebActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy Syrinx resposne to SQL",
@@ -525,6 +522,58 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "totalPages",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "totalPages",
+					"value": 112
+				}
+			},
+			{
+				"name": "currentPage",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "currentPage",
+					"value": 1
+				}
+			},
+			{
+				"name": "totalItemCount",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Get Customers from Syrinx API",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "totalItemCount",
+					"value": {
+						"value": "@activity('Get Customers from Syrinx API').output.totalItemCount\n",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
@@ -533,6 +582,15 @@
 			},
 			"Syrinx Token": {
 				"type": "String"
+			},
+			"totalPages": {
+				"type": "Integer"
+			},
+			"currentPage": {
+				"type": "Integer"
+			},
+			"totalItemCount": {
+				"type": "Integer"
 			}
 		},
 		"folder": {

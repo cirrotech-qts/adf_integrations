@@ -521,10 +521,6 @@
 							"regNumber": "AB51XYZ",
 							"cisRegNumber": "AB123XYZ",
 							"webSite": "abc.def.co.uk",
-							"salesperson": {
-								"id": null,
-								"shortname": null
-							},
 							"paymentTermText": {
 								"id": null
 							}

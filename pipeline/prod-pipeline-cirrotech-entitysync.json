@@ -83,18 +83,6 @@
 							},
 							{
 								"source": {
-									"name": "E-Mail",
-									"type": "String",
-									"physicalType": "nvarchar"
-								},
-								"sink": {
-									"name": "email",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
 									"name": "Bill-to Customer No_",
 									"type": "String",
 									"physicalType": "nvarchar"

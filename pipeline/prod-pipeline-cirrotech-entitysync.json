@@ -83,18 +83,6 @@
 							},
 							{
 								"source": {
-									"name": "Bill-to Customer No_",
-									"type": "String",
-									"physicalType": "nvarchar"
-								},
-								"sink": {
-									"name": "customerId",
-									"type": "Guid",
-									"physicalType": "uniqueidentifier"
-								}
-							},
-							{
-								"source": {
 									"name": "Currency Id",
 									"type": "Guid",
 									"physicalType": "uniqueidentifier"
@@ -112,7 +100,7 @@
 									"physicalType": "nvarchar"
 								},
 								"sink": {
-									"name": "companyAccNo",
+									"name": "Our Account No_",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -124,19 +112,7 @@
 									"physicalType": "nvarchar"
 								},
 								"sink": {
-									"name": "postcode",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Country_Region Code",
-									"type": "String",
-									"physicalType": "nvarchar"
-								},
-								"sink": {
-									"name": "country",
+									"name": "Post Code",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -259,18 +235,6 @@
 									"name": "E-Mail",
 									"type": "String",
 									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Last Date Modified",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								},
-								"sink": {
-									"name": "Last Date Modified",
-									"type": "DateTime",
-									"physicalType": "datetime"
 								}
 							},
 							{

@@ -83,18 +83,6 @@
 							},
 							{
 								"source": {
-									"name": "Fax No_",
-									"type": "String",
-									"physicalType": "nvarchar"
-								},
-								"sink": {
-									"name": "fax",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
 									"name": "E-Mail",
 									"type": "String",
 									"physicalType": "nvarchar"

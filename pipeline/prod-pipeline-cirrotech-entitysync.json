@@ -239,18 +239,6 @@
 							},
 							{
 								"source": {
-									"name": "Post Code",
-									"type": "String",
-									"physicalType": "nvarchar"
-								},
-								"sink": {
-									"name": "Post Code",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
 									"name": "Phone No_",
 									"type": "String",
 									"physicalType": "nvarchar"

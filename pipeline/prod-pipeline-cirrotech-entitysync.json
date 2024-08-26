@@ -497,8 +497,6 @@
 			{
 				"name": "Update or Create Customers in Syrinx",
 				"type": "WebActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "loopCounter",
@@ -670,7 +668,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "loopCounter",
+						"activity": "Update or Create Customers in Syrinx",
 						"dependencyConditions": [
 							"Succeeded"
 						]

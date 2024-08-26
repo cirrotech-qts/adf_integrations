@@ -191,18 +191,6 @@
 							},
 							{
 								"source": {
-									"name": "Our Account No_",
-									"type": "String",
-									"physicalType": "nvarchar"
-								},
-								"sink": {
-									"name": "Our Account No_",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
 									"name": "Address",
 									"type": "String",
 									"physicalType": "nvarchar"

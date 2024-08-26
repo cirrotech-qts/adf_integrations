@@ -740,7 +740,7 @@
 										},
 										{
 											"source": {
-												"path": "['accNo']"
+												"path": "['prop10']"
 											},
 											"sink": {
 												"name": "accNo",

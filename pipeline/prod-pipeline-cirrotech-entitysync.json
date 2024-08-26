@@ -742,59 +742,13 @@
 										},
 										{
 											"source": {
-												"path": "['name']"
+												"path": "['accNo']"
 											},
 											"sink": {
-												"name": "name",
+												"name": "accNo",
 												"type": "String"
 											}
-										},
-										{
-											"source": {
-												"path": "['address']['postcode']"
-											},
-											"sink": {
-												"name": "postcode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['address']['telephone']"
-											},
-											"sink": {
-												"name": "telephone",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['address']['fax']"
-											},
-											"sink": {
-												"name": "fax",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['address']['customerId']"
-											},
-											"sink": {
-												"name": "customerId",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "['email']"
-											},
-											"sink": {
-												"name": "email",
-												"type": "String"
-											}
-										},
-										null
+										}
 									],
 									"collectionReference": "$['results']",
 									"mapComplexValuesToString": false

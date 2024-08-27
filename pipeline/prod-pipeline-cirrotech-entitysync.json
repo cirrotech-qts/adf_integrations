@@ -808,7 +808,7 @@
 										}
 									},
 									{
-										"name": "Set variable2",
+										"name": "Set variable loop token",
 										"type": "SetVariable",
 										"dependsOn": [
 											{
@@ -826,7 +826,7 @@
 										"typeProperties": {
 											"variableName": "Syrinx Token",
 											"value": {
-												"value": "@string(activity('Get Syrinx Auth Token_copy1').output.access_Token)",
+												"value": "@string(activity('Get Syrinx Auth Token Loop').output.access_Token)",
 												"type": "Expression"
 											}
 										}

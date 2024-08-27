@@ -1024,7 +1024,8 @@
 				}
 			},
 			{
-				"name": "ForEach2",
+				"name": "ForEach Export Item",
+				"description": "Loop around items marked for export and make API call to create or update item.",
 				"type": "ForEach",
 				"dependsOn": [
 					{

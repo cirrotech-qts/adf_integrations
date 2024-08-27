@@ -1013,7 +1013,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT \r\n[No_]\r\n      ,[name]\r\n      ,[telephone]\r\n      ,[fax]\r\n      ,[email]\r\n      ,[dateAdded]\r\n      ,[modifiedDate]\r\n      ,[customerId]\r\n      ,[currencyId]\r\n      ,[companyAccNo]\r\n      ,[postcode]\r\n      ,[country]\r\n      ,[Global Dimension 1 Code]\r\n      ,[Our Account No_]\r\n      ,[Address]\r\n      ,[Address 2]\r\n      ,[City]\r\n      ,[County]\r\n      ,[Post Code]\r\n      ,[Phone No_]\r\n      ,[Fax No_]\r\n      ,[Salesperson Code]\r\n      ,[VAT Registration No_]\r\n      ,[E-Mail]\r\n      ,[Last Date Modified]\r\n      ,[Preferred Bank Account Code]\r\n      ,[Location Code]\r\nFROM customer_from_BC\r\nWHERE exportToSynrix = 1;\r\n",
+						"sqlReaderQuery": "SELECT \n[No_]\n      ,[name]\n      ,[telephone]\n      ,[fax]\n      ,[email]\n\n\n      ,[customerId]\n      ,[currencyId]\n      ,[companyAccNo]\n      ,[postcode]\n      ,[country]\n      ,[Global Dimension 1 Code]\n      ,[Our Account No_]\n      ,[Address]\n      ,[Address 2]\n      ,[City]\n      ,[County]\n      ,[Post Code]\n      ,[Phone No_]\n      ,[Fax No_]\n      ,[Salesperson Code]\n      ,[VAT Registration No_]\n      ,[E-Mail]\n\nFROM customer_from_BC\nWHERE exportToSynrix = 1;\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

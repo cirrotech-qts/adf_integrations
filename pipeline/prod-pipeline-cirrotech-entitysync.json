@@ -664,7 +664,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "For Each Page from Syrinx",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -781,7 +781,7 @@
 								},
 								"ifTrueActivities": [
 									{
-										"name": "Get Syrinx Auth Token_copy1",
+										"name": "Get Syrinx Auth Token in loop",
 										"description": "Acquire an auth token using encoded user name and password",
 										"type": "WebActivity",
 										"dependsOn": [],
@@ -808,11 +808,11 @@
 										}
 									},
 									{
-										"name": "Set variable2",
+										"name": "Set variable loop token",
 										"type": "SetVariable",
 										"dependsOn": [
 											{
-												"activity": "Get Syrinx Auth Token_copy1",
+												"activity": "Get Syrinx Auth Token in loop",
 												"dependencyConditions": [
 													"Succeeded"
 												]
@@ -826,7 +826,7 @@
 										"typeProperties": {
 											"variableName": "Syrinx Token",
 											"value": {
-												"value": "@string(activity('Get Syrinx Auth Token_copy1').output.access_Token)",
+												"value": "@string(activity('Get Syrinx Auth Token in loop').output.access_Token)",
 												"type": "Expression"
 											}
 										}
@@ -869,7 +869,8 @@
 							}
 						},
 						{
-							"name": "Token_copy1",
+							"name": "Loop Token",
+							"description": "Token generated every 10 pages of data to avoid it expiring",
 							"type": "SetVariable",
 							"dependsOn": [
 								{

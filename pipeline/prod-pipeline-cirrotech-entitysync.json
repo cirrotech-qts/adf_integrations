@@ -497,14 +497,9 @@
 			{
 				"name": "Update or Create Customers in Syrinx",
 				"type": "WebActivity",
-				"dependsOn": [
-					{
-						"activity": "loopCounter",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -668,7 +663,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Update or Create Customers in Syrinx",
+						"activity": "loopCounter",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -944,7 +939,14 @@
 				"name": "Stored procedure UpdateExportToSynrix",
 				"description": "Check if No_ exists in both SQL tables and marks for update",
 				"type": "SqlServerStoredProcedure",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -959,6 +961,203 @@
 				"linkedServiceName": {
 					"referenceName": "AzureSqlSyncDB",
 					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Stored procedure MarkBCEntriesForExport",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Stored procedure UpdateExportToSynrix",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[MarkBCEntriesForExport]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlSyncDB",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Lookup customer_from_BC",
+				"description": "SELECT No_\nFROM customer_from_BC\nWHERE exportToSynrix = 1;\n",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Stored procedure MarkBCEntriesForExport",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT No_\r\nFROM customer_from_BC\r\nWHERE exportToSynrix = 1;\r\n",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "AzureSQL_CustomersFromBC",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "ForEach2",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookup customer_from_BC",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup customer_from_BC').output",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Update or Create Customers in Syrinx_copy1",
+							"type": "WebActivity",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"method": "POST",
+								"headers": {
+									"Authorization": {
+										"value": "@concat('Bearer ', variables('Syrinx Token'))\n",
+										"type": "Expression"
+									},
+									"Content-Type": "application/json"
+								},
+								"url": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Customers",
+								"connectVia": {
+									"referenceName": "QTSOnPrem",
+									"type": "IntegrationRuntimeReference"
+								},
+								"body": [
+									{
+										"type": "A",
+										"name": "Cirrotech",
+										"accNo": "NCC1701D",
+										"taxCode": "",
+										"locTaxCode": "",
+										"internal": true,
+										"companyType": "Individual",
+										"currencyCode": "GBP",
+										"address": {
+											"name": "DEPOT",
+											"line1": "Head Office",
+											"line2": null,
+											"line3": "UK",
+											"town": "CAVERSHAM",
+											"county": "BERKSHIRE",
+											"postcode": "RG4 5BB",
+											"telephone": "07495395817",
+											"fax": null,
+											"latitude": "51.4591155",
+											"longitude": "-0.9674165",
+											"what3Words": "fixed.almost.years",
+											"directions": null
+										},
+										"countryCode": "",
+										"marketingCategory": "",
+										"prop1": "",
+										"prop6": "",
+										"prop7": "",
+										"prop8": "",
+										"prop9": "XY9",
+										"prop10": "",
+										"currentFlag": true,
+										"canUseAnyDepot": true,
+										"onHold": false,
+										"depot": {
+											"id": 1,
+											"name": "QTS National HQ",
+											"shortCode": "001",
+											"address": {
+												"id": 2,
+												"name": "Depot",
+												"line1": "Rench Farm",
+												"line2": "Drumclog",
+												"line3": null,
+												"town": "Strathhaven",
+												"county": "South Lanarkshire",
+												"postcode": null,
+												"telephone": "01357 440 364",
+												"fax": null,
+												"latitude": null,
+												"longitude": null,
+												"what3Words": null,
+												"prop1": null,
+												"prop2": null,
+												"prop3": null,
+												"prop4": null,
+												"prop5": null,
+												"prop6": null,
+												"prop7": null,
+												"prop8": null,
+												"prop9": null,
+												"prop10": null,
+												"directions": null,
+												"operatorNotes": null,
+												"customerId": null,
+												"dateCreated": null,
+												"createdByUser": null,
+												"dateModified": null,
+												"modifiedByUser": null
+											}
+										},
+										"exportToAccounts": false,
+										"creditLimit": 1000,
+										"accountBalance": 500,
+										"email": "",
+										"vatNumber": "",
+										"regNumber": "AB51XYZ",
+										"cisRegNumber": "AB123XYZ",
+										"webSite": "abc.def.co.uk",
+										"paymentTermText": {
+											"id": null
+										}
+									}
+								]
+							}
+						}
+					]
 				}
 			}
 		],

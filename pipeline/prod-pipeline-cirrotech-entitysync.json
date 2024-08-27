@@ -941,7 +941,8 @@
 				}
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "Stored procedure UpdateExportToSynrix",
+				"description": "Check if No_ exists in both SQL tables and marks for update",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {

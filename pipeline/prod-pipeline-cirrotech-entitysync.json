@@ -1044,7 +1044,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup customer_from_BC').output",
+						"value": "@activity('Lookup customer_from_BC').output.pipelineReturnValue",
 						"type": "Expression"
 					},
 					"activities": [

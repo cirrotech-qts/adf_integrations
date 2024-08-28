@@ -1079,7 +1079,7 @@
 									{
 										"type": "A",
 										"name": "Cirrotech",
-										"accNo": "@item().customerId",
+										"accNo": "@item().No_",
 										"taxCode": "",
 										"locTaxCode": "",
 										"internal": true,

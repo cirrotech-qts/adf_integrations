@@ -665,7 +665,7 @@
 				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
-						"activity": "Copy Syrinx resposne to SQL_copy1_copy1",
+						"activity": "loopCounter",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -1197,93 +1197,6 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "Copy Syrinx resposne to SQL_copy1_copy1",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "loopCounter",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:01.000",
-						"requestMethod": "GET",
-						"additionalHeaders": {
-							"Authorization": {
-								"value": "@concat('Bearer ', variables('Syrinx Token'))",
-								"type": "Expression"
-							}
-						},
-						"paginationRules": {
-							"supportRFC5988": "true"
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
-					},
-					"enableStaging": false,
-					"parallelCopies": 1,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "['id']"
-								},
-								"sink": {
-									"name": "id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['depot']['prop10']"
-								},
-								"sink": {
-									"name": "accNo",
-									"type": "String"
-								}
-							}
-						],
-						"collectionReference": "$['results']",
-						"mapComplexValuesToString": false
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "RestResourceSyrinxCustomers",
-						"type": "DatasetReference",
-						"parameters": {
-							"PageNo": {
-								"value": "112",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSQL_CustomersFromSyrinx",
-						"type": "DatasetReference"
-					}
-				]
 			}
 		],
 		"variables": {

@@ -661,8 +661,6 @@
 			{
 				"name": "ForEach page number",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "loopCounter",
@@ -753,7 +751,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"PageNo": {
-											"value": "@item()",
+											"value": "112",
 											"type": "Expression"
 										}
 									}

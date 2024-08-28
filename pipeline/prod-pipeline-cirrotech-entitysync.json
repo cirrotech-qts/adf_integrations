@@ -1179,7 +1179,16 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "[dbo].[UpdateExportToSynrixComplete]"
+								"storedProcedureName": "[dbo].[UpdateExportToSynrixComplete]",
+								"storedProcedureParameters": {
+									"No_": {
+										"value": {
+											"value": "@item().No_",
+											"type": "Expression"
+										},
+										"type": "String"
+									}
+								}
 							},
 							"linkedServiceName": {
 								"referenceName": "AzureSqlSyncDB",

@@ -1026,7 +1026,8 @@
 					"dataset": {
 						"referenceName": "AzureSQL_CustomersFromBC",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{

@@ -661,8 +661,6 @@
 			{
 				"name": "ForEach page number",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "loopCounter",
@@ -735,7 +733,7 @@
 										},
 										{
 											"source": {
-												"path": "['prop10']"
+												"path": "['depot']['prop10']"
 											},
 											"sink": {
 												"name": "accNo",

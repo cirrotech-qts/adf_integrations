@@ -1019,7 +1019,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT \n[No_]\n      ,[name]\n      ,[telephone]\n      ,[fax]\n      ,[email]\n\n\n      ,[customerId]\n      ,[currencyId]\n      ,[companyAccNo]\n      ,[postcode]\n      ,[country]\n      ,[Global Dimension 1 Code]\n      ,[Our Account No_]\n      ,[Address]\n      ,[Address 2]\n      ,[City]\n      ,[County]\n      ,[Post Code]\n      ,[Phone No_]\n      ,[Fax No_]\n      ,[Salesperson Code]\n      ,[VAT Registration No_]\n      ,[E-Mail]\n\nFROM customer_from_BC\nWHERE exportToSynrix = 1;\n",
+						"sqlReaderQuery": "SELECT \n[No_]\n      ,[name]\n      ,[telephone]\n      ,[fax]\n      ,[email]\n      ,[customerId]\n      ,[currencyId]\n      ,[companyAccNo]\n      ,[postcode]\n      ,[country]\n      ,[Global Dimension 1 Code]\n      ,[Our Account No_]\n      ,[Address]\n      ,[Address 2]\n      ,[City]\n      ,[County]\n      ,[Post Code]\n      ,[Phone No_]\n      ,[Fax No_]\n      ,[Salesperson Code]\n      ,[VAT Registration No_]\n      ,[E-Mail]\nFROM customer_from_BC\nWHERE exportToSynrix = 1;\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

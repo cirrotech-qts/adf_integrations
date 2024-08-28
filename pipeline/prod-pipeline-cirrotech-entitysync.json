@@ -661,6 +661,8 @@
 			{
 				"name": "ForEach page number",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "loopCounter",
@@ -1132,7 +1134,7 @@
 												"prop7": null,
 												"prop8": null,
 												"prop9": null,
-												"prop10": null,
+												"prop10": "@item().No_",
 												"directions": null,
 												"operatorNotes": null,
 												"customerId": null,

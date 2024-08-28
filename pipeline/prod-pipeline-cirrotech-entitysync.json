@@ -659,7 +659,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "ForEach page number",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -941,7 +941,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "ForEach1",
+						"activity": "ForEach page number",
 						"dependencyConditions": [
 							"Succeeded"
 						]

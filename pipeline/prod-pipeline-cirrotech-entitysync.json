@@ -367,7 +367,7 @@
 							"type": "Expression"
 						}
 					},
-					"url": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Customers?CustomerName=QTS%20Rail%20Ltd",
+					"url": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Customers?Name=QTS%20Rail%20Ltd",
 					"connectVia": {
 						"referenceName": "QTSOnPrem",
 						"type": "IntegrationRuntimeReference"
@@ -661,6 +661,8 @@
 			{
 				"name": "ForEach page number",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "loopCounter",

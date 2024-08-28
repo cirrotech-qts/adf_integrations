@@ -1078,7 +1078,7 @@
 								"body": [
 									{
 										"type": "A",
-										"name": "Cirrotech",
+										"name": "@item().name",
 										"accNo": "@item().No_",
 										"taxCode": "",
 										"locTaxCode": "",
@@ -1087,8 +1087,8 @@
 										"currencyCode": "GBP",
 										"address": {
 											"name": "DEPOT",
-											"line1": "Head Office",
-											"line2": null,
+											"line1": "@item().Address",
+											"line2": "@item().Address 2",
 											"line3": "UK",
 											"town": "CAVERSHAM",
 											"county": "BERKSHIRE",

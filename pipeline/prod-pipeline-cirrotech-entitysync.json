@@ -1088,7 +1088,7 @@
 										"address": {
 											"name": "DEPOT",
 											"line1": "@item().Address",
-											"line2": "@item().Address 2",
+											"line2": "@item()['Address 2']",
 											"line3": "UK",
 											"town": "CAVERSHAM",
 											"county": "BERKSHIRE",

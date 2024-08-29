@@ -515,6 +515,24 @@
 												"name": "name",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "['Address']"
+											},
+											"sink": {
+												"name": "Address",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['Address 2']"
+											},
+											"sink": {
+												"name": "Address 2",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": "$['results']",
@@ -975,14 +993,7 @@
 			{
 				"name": "ForEach Export Update Item",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Lookup customer_from_Syrinx",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -1105,40 +1116,6 @@
 							}
 						}
 					]
-				}
-			},
-			{
-				"name": "Lookup customer_from_Syrinx",
-				"description": "SELECT \n       [id]\n      ,[name]\n      ,[telephone]\n      ,[fax]\n      ,[email]\n      ,[dateAdded]\n      ,[modifiedDate]\n      ,[customerId]\n      ,[currencyId]\n      ,[companyAccNo]\n      ,[postcode]\n      ,[country]\n      ,[accNo]\n      ,[exportToSynrix]\n\nFROM customer_from_Synrix\nWHERE exportToSynrix = 1;",
-				"type": "Lookup",
-				"dependsOn": [
-					{
-						"activity": "ForEach Export Create New Item",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT \n       [id]\n      ,[name]\n      ,[telephone]\n      ,[fax]\n      ,[email]\n      ,[dateAdded]\n      ,[modifiedDate]\n      ,[customerId]\n      ,[currencyId]\n      ,[companyAccNo]\n      ,[postcode]\n      ,[country]\n      ,[accNo]\n      ,[exportToSynrix]\n\nFROM customer_from_Synrix\nWHERE exportToSynrix = 1;\n",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "AzureSQL_CustomersFromBC",
-						"type": "DatasetReference"
-					},
-					"firstRowOnly": false
 				}
 			}
 		],

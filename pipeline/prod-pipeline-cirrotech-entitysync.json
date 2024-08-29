@@ -631,7 +631,7 @@
 							}
 						},
 						{
-							"name": "Token_copy1",
+							"name": "Token_copy",
 							"type": "SetVariable",
 							"dependsOn": [
 								{

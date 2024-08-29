@@ -368,7 +368,7 @@
 						}
 					},
 					"url": {
-						"value": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Customers?ChangesSince=@{formatDateTime(utcnow(), 'yyyy-MM-dd')}",
+						"value": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Customers?ChangesSince=2024-08-28",
 						"type": "Expression"
 					},
 					"connectVia": {

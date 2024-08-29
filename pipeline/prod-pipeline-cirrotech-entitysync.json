@@ -1020,7 +1020,7 @@
 									{
 										"type": "A",
 										"name": "@item().name",
-										"accNo": "@item().No_",
+										"accNo": "@item().accNo",
 										"taxCode": "",
 										"locTaxCode": "",
 										"internal": true,

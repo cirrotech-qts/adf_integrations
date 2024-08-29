@@ -792,7 +792,7 @@
 				}
 			},
 			{
-				"name": "ForEach Export New Item",
+				"name": "ForEach Export Create New Item",
 				"description": "Loop around items marked for export and make API call to create or update item.",
 				"type": "ForEach",
 				"dependsOn": [
@@ -1100,7 +1100,7 @@
 				"type": "Lookup",
 				"dependsOn": [
 					{
-						"activity": "ForEach Export New Item",
+						"activity": "ForEach Export Create New Item",
 						"dependencyConditions": [
 							"Succeeded"
 						]

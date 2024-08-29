@@ -976,6 +976,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup customer_from_Syrinx').output.value",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Update or Create Customers in Syrinx_copy1_copy1",

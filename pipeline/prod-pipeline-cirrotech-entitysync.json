@@ -500,7 +500,7 @@
 										},
 										{
 											"source": {
-												"path": "[accNo]"
+												"path": "$['accNo']"
 											},
 											"sink": {
 												"name": "accNo",

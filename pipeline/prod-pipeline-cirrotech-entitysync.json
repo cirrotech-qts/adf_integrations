@@ -506,6 +506,15 @@
 												"name": "accNo",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "['name']"
+											},
+											"sink": {
+												"name": "name",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": "$['results']",

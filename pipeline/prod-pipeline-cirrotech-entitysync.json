@@ -597,7 +597,7 @@
 							}
 						},
 						{
-							"name": "Get Syrinx Auth Token_copy2",
+							"name": "Get Syrinx Auth Token_copy",
 							"description": "Acquire an auth token using encoded user name and password",
 							"type": "WebActivity",
 							"dependsOn": [
@@ -635,7 +635,7 @@
 							"type": "SetVariable",
 							"dependsOn": [
 								{
-									"activity": "Get Syrinx Auth Token_copy2",
+									"activity": "Get Syrinx Auth Token_copy",
 									"dependencyConditions": [
 										"Succeeded"
 									]

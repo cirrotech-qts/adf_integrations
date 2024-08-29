@@ -563,75 +563,7 @@
 										},
 										{
 											"source": {
-												"path": "['address']['customerId']"
-											},
-											"sink": {
-												"name": "customerId",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "['depot']['address']['postcode']"
-											},
-											"sink": {
-												"name": "postcode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['depot']['address']['telephone']"
-											},
-											"sink": {
-												"name": "telephone",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['depot']['address']['fax']"
-											},
-											"sink": {
-												"name": "fax",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['depot']['address']['customerId']"
-											},
-											"sink": {
-												"name": "customerId",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
 												"path": "['email']"
-											},
-											"sink": {
-												"name": "email",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['modifiedBy']['serverLogon']"
-											}
-										},
-										{
-											"source": {
-												"path": "['modifiedBy']['email']"
-											},
-											"sink": {
-												"name": "email",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['createdBy']['email']"
 											},
 											"sink": {
 												"name": "email",

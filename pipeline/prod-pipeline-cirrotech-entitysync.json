@@ -500,7 +500,7 @@
 										},
 										{
 											"source": {
-												"path": "['depot']['prop10']"
+												"path": "[accNo]"
 											},
 											"sink": {
 												"name": "accNo",

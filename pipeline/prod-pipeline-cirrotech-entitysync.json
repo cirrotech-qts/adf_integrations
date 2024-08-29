@@ -1029,7 +1029,14 @@
 			{
 				"name": "ForEach Export Update Item",
 				"type": "ForEach",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Lookup customer_from_Syrinx",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -1186,7 +1193,14 @@
 				"name": "Lookup customer_from_Syrinx",
 				"description": "SELECT \n      [name]\n      ,[telephone]\n      ,[fax]\n      ,[email]\n      ,[dateAdded]\n      ,[modifiedDate]\n      ,[customerId]\n      ,[currencyId]\n      ,[companyAccNo]\n      ,[postcode]\n      ,[country]\n      ,[Global Dimension 1 Code]\n      ,[Our Account No_]\n      ,[Address]\n      ,[Address 2]\n      ,[City]\n      ,[County]\n      ,[Post Code]\n      ,[Phone No_]\n      ,[Fax No_]\n      ,[Salesperson Code]\n      ,[VAT Registration No_]\n      ,[E-Mail]\n      ,[Preferred Bank Account Code]\n      ,[Location Code]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE exportToSynrixUpdates= 1;",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Stored procedure CompareAndSetExportToSynrixUpdates",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,

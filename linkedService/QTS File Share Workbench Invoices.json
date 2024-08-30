@@ -6,8 +6,8 @@
 		"type": "FileServer",
 		"typeProperties": {
 			"host": "\\\\sql2019\\ECX\\Workbench Invoices\\",
-			"userId": "integration_admin",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2NTBmZGNkOS0xZjc3LTRiOTItYjllZC1mNWJjYWQ5YTlmMmQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"userId": "cirrotech@qtsgroup.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5YWI3MThjMi1iZWI5LTRmYzUtYTU0MS0wZWE5ZTg4MDAxZGMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "QTSOnPrem",

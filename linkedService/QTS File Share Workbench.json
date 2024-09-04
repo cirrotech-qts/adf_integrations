@@ -6,7 +6,7 @@
 		"type": "FileServer",
 		"typeProperties": {
 			"host": "\\\\sql2019\\ECX\\Workbench Invoices\\",
-			"userId": "integration_admin",
+			"userId": "qtsgroup\\sageadmin",
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {

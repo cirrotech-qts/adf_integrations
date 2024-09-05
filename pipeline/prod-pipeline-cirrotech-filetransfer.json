@@ -67,7 +67,10 @@
 						"referenceName": "QTS_Fileshare_Dataset",
 						"type": "DatasetReference"
 					},
-					"fieldList": [],
+					"fieldList": [
+						"itemName",
+						"itemType"
+					],
 					"storeSettings": {
 						"type": "FileServerReadSettings",
 						"enablePartitionDiscovery": false
@@ -94,7 +97,10 @@
 						"referenceName": "QTS_SFTP_Dataset",
 						"type": "DatasetReference"
 					},
-					"fieldList": [],
+					"fieldList": [
+						"itemName",
+						"itemType"
+					],
 					"storeSettings": {
 						"type": "SftpReadSettings",
 						"enablePartitionDiscovery": false,

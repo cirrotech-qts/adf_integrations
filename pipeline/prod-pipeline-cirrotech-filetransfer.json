@@ -7,20 +7,7 @@
 				"type": "Copy",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "Get Metadata from Fileshare",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "Get Metadata from SFTP",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -124,6 +111,25 @@
 					},
 					"formatSettings": {
 						"type": "BinaryReadSettings"
+					}
+				}
+			},
+			{
+				"name": "ForEach file in SFTP",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata from SFTP",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get Metadata from SFTP').output.childItems",
+						"type": "Expression"
 					}
 				}
 			}

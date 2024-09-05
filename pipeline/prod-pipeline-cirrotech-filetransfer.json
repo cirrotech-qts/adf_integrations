@@ -142,7 +142,7 @@
 							"type": "Copy",
 							"dependsOn": [
 								{
-									"activity": "If Condition1",
+									"activity": "If file is PDF or XML",
 									"dependencyConditions": [
 										"Skipped"
 									]
@@ -269,7 +269,7 @@
 							]
 						},
 						{
-							"name": "If Condition1",
+							"name": "If file is PDF or XML",
 							"type": "IfCondition",
 							"dependsOn": [],
 							"userProperties": [],

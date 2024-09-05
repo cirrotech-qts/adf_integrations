@@ -3,55 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy Invoices",
-				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "BinarySource",
-						"storeSettings": {
-							"type": "SftpReadSettings",
-							"recursive": true,
-							"deleteFilesAfterCompletion": false,
-							"disableChunking": false
-						},
-						"formatSettings": {
-							"type": "BinaryReadSettings"
-						}
-					},
-					"sink": {
-						"type": "BinarySink",
-						"storeSettings": {
-							"type": "FileServerWriteSettings",
-							"copyBehavior": "PreserveHierarchy"
-						}
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "QTS_SFTP_Dataset",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "QTS_Fileshare_Dataset",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "Get Metadata from Fileshare",
 				"type": "GetMetadata",
 				"dependsOn": [],
@@ -124,6 +75,12 @@
 				"dependsOn": [
 					{
 						"activity": "Get Metadata from SFTP",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Get Metadata from Fileshare",
 						"dependencyConditions": [
 							"Succeeded"
 						]

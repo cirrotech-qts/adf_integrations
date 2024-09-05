@@ -99,6 +99,7 @@
 						"referenceName": "QTS_SFTP_Dataset",
 						"type": "DatasetReference",
 						"parameters": {
+							"FileName": "*.*",
 							"WorkingDirectory": "Invoices/Test/"
 						}
 					},

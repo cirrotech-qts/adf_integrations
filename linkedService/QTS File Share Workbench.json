@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "\\\\sql2019\\ECX\\Workbench Invoices\\",
+			"host": "\\\\sql2019\\ECX\\",
 			"userId": "qtsgroup\\sageadmin",
 			"password": {
 				"type": "AzureKeyVaultSecret",

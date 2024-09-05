@@ -10,8 +10,7 @@
 				"type": "string"
 			},
 			"ProcessedDirectory": {
-				"type": "string",
-				"defaultValue": "Processed"
+				"type": "string"
 			}
 		},
 		"annotations": [],

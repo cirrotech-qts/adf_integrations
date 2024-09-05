@@ -5,6 +5,8 @@
 			{
 				"name": "Get Metadata from Fileshare",
 				"type": "GetMetadata",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -36,8 +38,6 @@
 			{
 				"name": "Get Metadata from SFTP",
 				"type": "GetMetadata",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -213,7 +213,7 @@
 														"value": "@item().name\r\n",
 														"type": "Expression"
 													},
-													"WorkingDirectory": "Invoices/Test/Processed/"
+													"WorkingDirectory": "Invoices/Test/"
 												}
 											}
 										],
@@ -226,7 +226,7 @@
 														"value": "@item().name\n",
 														"type": "Expression"
 													},
-													"WorkingDirectory": "Invoices/Test/"
+													"WorkingDirectory": "Invoices/Test/Processed"
 												}
 											}
 										]

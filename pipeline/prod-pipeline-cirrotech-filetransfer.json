@@ -53,6 +53,7 @@
 						"referenceName": "QTS_SFTP_Dataset",
 						"type": "DatasetReference",
 						"parameters": {
+							"FileName": "*.{xml,pdf}",
 							"WorkingDirectory": "Invoices/Test/"
 						}
 					},

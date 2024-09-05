@@ -17,7 +17,11 @@
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "SftpLocation"
+				"type": "SftpLocation",
+				"folderPath": {
+					"value": "@dataset().WorkingDirectory",
+					"type": "Expression"
+				}
 			}
 		}
 	}

@@ -121,8 +121,6 @@
 			{
 				"name": "ForEach file in SFTP",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Metadata from SFTP",
@@ -254,7 +252,8 @@
 										"FileName": {
 											"value": "@item().name\n",
 											"type": "Expression"
-										}
+										},
+										"WorkingDirectory": "Invoices/Test/Processed"
 									}
 								}
 							]

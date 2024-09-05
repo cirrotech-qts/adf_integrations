@@ -69,7 +69,8 @@
 					},
 					"fieldList": [
 						"itemName",
-						"itemType"
+						"itemType",
+						"childItems"
 					],
 					"storeSettings": {
 						"type": "FileServerReadSettings",

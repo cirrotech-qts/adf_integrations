@@ -36,6 +36,8 @@
 			{
 				"name": "Get Metadata from SFTP",
 				"type": "GetMetadata",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -74,13 +76,13 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Get Metadata from SFTP",
+						"activity": "Get Metadata from Fileshare",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "Get Metadata from Fileshare",
+						"activity": "Get Metadata from SFTP",
 						"dependencyConditions": [
 							"Succeeded"
 						]

@@ -9,8 +9,7 @@
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "SftpLocation",
-				"folderPath": "/Invoices/Test"
+				"type": "SftpLocation"
 			}
 		}
 	}

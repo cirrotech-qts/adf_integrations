@@ -140,7 +140,14 @@
 						{
 							"name": "Copy File from SFTP to Fileshare",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "If Condition1",
+									"dependencyConditions": [
+										"Skipped"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -260,6 +267,18 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@or(endswith(item().name, '.xml'), endswith(item().name, '.pdf'))\n",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}

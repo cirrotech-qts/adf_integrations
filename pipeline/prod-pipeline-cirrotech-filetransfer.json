@@ -178,7 +178,8 @@
 										"FileName": {
 											"value": "@item().name\r\n",
 											"type": "Expression"
-										}
+										},
+										"WorkingDirectory": "Invoices/Test/"
 									}
 								}
 							],
@@ -240,7 +241,8 @@
 										"FileName": {
 											"value": "@item().name\r\n",
 											"type": "Expression"
-										}
+										},
+										"WorkingDirectory": "Invoices/Test/"
 									}
 								}
 							],

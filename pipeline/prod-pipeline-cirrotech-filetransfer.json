@@ -28,6 +28,7 @@
 					],
 					"storeSettings": {
 						"type": "FileServerReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -63,6 +64,7 @@
 					],
 					"storeSettings": {
 						"type": "SftpReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false,
 						"disableChunking": false
 					},
@@ -199,7 +201,7 @@
 													"type": "SftpWriteSettings",
 													"copyBehavior": "FlattenHierarchy",
 													"operationTimeout": "01:00:00",
-													"useTempFileRename": true
+													"useTempFileRename": false
 												}
 											},
 											"enableStaging": false

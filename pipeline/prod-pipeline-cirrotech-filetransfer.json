@@ -120,6 +120,8 @@
 			{
 				"name": "ForEach file in SFTP",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Metadata from SFTP",

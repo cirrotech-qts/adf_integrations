@@ -138,137 +138,6 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Copy File from SFTP to Fileshare",
-							"type": "Copy",
-							"dependsOn": [
-								{
-									"activity": "If file is PDF or XML",
-									"dependencyConditions": [
-										"Skipped"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "BinarySource",
-									"storeSettings": {
-										"type": "SftpReadSettings",
-										"recursive": true,
-										"deleteFilesAfterCompletion": false,
-										"disableChunking": false
-									},
-									"formatSettings": {
-										"type": "BinaryReadSettings"
-									}
-								},
-								"sink": {
-									"type": "BinarySink",
-									"storeSettings": {
-										"type": "FileServerWriteSettings",
-										"copyBehavior": "PreserveHierarchy"
-									}
-								},
-								"enableStaging": false
-							},
-							"inputs": [
-								{
-									"referenceName": "QTS_SFTP_Dataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"FileName": {
-											"value": "@item().name\r\n",
-											"type": "Expression"
-										},
-										"WorkingDirectory": "Invoices/Test/"
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "QTS_Fileshare_Dataset",
-									"type": "DatasetReference"
-								}
-							]
-						},
-						{
-							"name": "Copy File from SFTP to Processed",
-							"type": "Copy",
-							"dependsOn": [
-								{
-									"activity": "Copy File from SFTP to Fileshare",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "BinarySource",
-									"storeSettings": {
-										"type": "SftpReadSettings",
-										"recursive": true,
-										"deleteFilesAfterCompletion": false,
-										"disableChunking": false
-									},
-									"formatSettings": {
-										"type": "BinaryReadSettings"
-									}
-								},
-								"sink": {
-									"type": "BinarySink",
-									"storeSettings": {
-										"type": "SftpWriteSettings",
-										"copyBehavior": "PreserveHierarchy",
-										"operationTimeout": "01:00:00",
-										"useTempFileRename": true
-									}
-								},
-								"enableStaging": false
-							},
-							"inputs": [
-								{
-									"referenceName": "QTS_SFTP_Dataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"FileName": {
-											"value": "@item().name\r\n",
-											"type": "Expression"
-										},
-										"WorkingDirectory": "Invoices/Test/"
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "QTS_SFTP_Dataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"FileName": {
-											"value": "@item().name\n",
-											"type": "Expression"
-										},
-										"WorkingDirectory": "Invoices/Test/"
-									}
-								}
-							]
-						},
-						{
 							"name": "If file is PDF or XML",
 							"type": "IfCondition",
 							"dependsOn": [],
@@ -277,7 +146,133 @@
 								"expression": {
 									"value": "@or(endswith(item().name, '.xml'), endswith(item().name, '.pdf'))\n",
 									"type": "Expression"
-								}
+								},
+								"ifTrueActivities": [
+									{
+										"name": "Copy File from SFTP to Fileshare",
+										"type": "Copy",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "BinarySource",
+												"storeSettings": {
+													"type": "SftpReadSettings",
+													"recursive": false,
+													"deleteFilesAfterCompletion": false,
+													"disableChunking": false
+												},
+												"formatSettings": {
+													"type": "BinaryReadSettings"
+												}
+											},
+											"sink": {
+												"type": "BinarySink",
+												"storeSettings": {
+													"type": "FileServerWriteSettings",
+													"copyBehavior": "FlattenHierarchy"
+												}
+											},
+											"enableStaging": false
+										},
+										"inputs": [
+											{
+												"referenceName": "QTS_SFTP_Dataset",
+												"type": "DatasetReference",
+												"parameters": {
+													"FileName": {
+														"value": "@item().name\r\n",
+														"type": "Expression"
+													},
+													"WorkingDirectory": "Invoices/Test/"
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "QTS_Fileshare_Dataset",
+												"type": "DatasetReference"
+											}
+										]
+									},
+									{
+										"name": "Copy File from SFTP to Processed",
+										"type": "Copy",
+										"dependsOn": [
+											{
+												"activity": "Copy File from SFTP to Fileshare",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "BinarySource",
+												"storeSettings": {
+													"type": "SftpReadSettings",
+													"recursive": false,
+													"deleteFilesAfterCompletion": false,
+													"disableChunking": false
+												},
+												"formatSettings": {
+													"type": "BinaryReadSettings"
+												}
+											},
+											"sink": {
+												"type": "BinarySink",
+												"storeSettings": {
+													"type": "SftpWriteSettings",
+													"copyBehavior": "FlattenHierarchy",
+													"operationTimeout": "01:00:00",
+													"useTempFileRename": true
+												}
+											},
+											"enableStaging": false
+										},
+										"inputs": [
+											{
+												"referenceName": "QTS_SFTP_Dataset",
+												"type": "DatasetReference",
+												"parameters": {
+													"FileName": {
+														"value": "@item().name\r\n",
+														"type": "Expression"
+													},
+													"WorkingDirectory": "Invoices/Test/"
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "QTS_SFTP_Dataset",
+												"type": "DatasetReference",
+												"parameters": {
+													"FileName": {
+														"value": "@item().name\n",
+														"type": "Expression"
+													},
+													"WorkingDirectory": "Invoices/Test/"
+												}
+											}
+										]
+									}
+								]
 							}
 						}
 					]

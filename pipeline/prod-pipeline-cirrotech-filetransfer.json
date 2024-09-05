@@ -256,7 +256,7 @@
 											"value": "@item().name\n",
 											"type": "Expression"
 										},
-										"WorkingDirectory": "Invoices/Test/Processed"
+										"WorkingDirectory": "Invoices/Test/"
 									}
 								}
 							]

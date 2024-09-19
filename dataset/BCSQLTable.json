@@ -484,7 +484,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "QTS GROUP **LIVE**$Customer"
+			"table": "QTS Group New$Job"
 		}
 	}
 }

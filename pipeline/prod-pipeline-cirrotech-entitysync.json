@@ -326,10 +326,6 @@
 										{
 											"source": {
 												"path": "['id']"
-											},
-											"sink": {
-												"name": "id",
-												"type": "String"
 											}
 										},
 										{
@@ -337,71 +333,616 @@
 												"path": "['name']"
 											},
 											"sink": {
-												"name": "name",
+												"name": "Customer Name",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
+												"path": "['type']"
+											}
+										},
+										{
+											"source": {
 												"path": "['accNo']"
+											}
+										},
+										{
+											"source": {
+												"path": "['taxCode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['locTaxCode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['internal']"
+											}
+										},
+										{
+											"source": {
+												"path": "['companyType']"
+											}
+										},
+										{
+											"source": {
+												"path": "['currencyCode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['name']"
 											},
 											"sink": {
-												"name": "accNo",
+												"name": "Site Name",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "['address']['line1']"
-											},
-											"sink": {
-												"name": "Address",
-												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "['address']['line2']"
-											},
-											"sink": {
-												"name": "Address 2",
-												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['line3']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['town']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['county']"
 											}
 										},
 										{
 											"source": {
 												"path": "['address']['postcode']"
-											},
-											"sink": {
-												"name": "postcode",
-												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "['address']['telephone']"
-											},
-											"sink": {
-												"name": "telephone",
-												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "['address']['fax']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['latitude']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['longitude']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['what3Words']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop1']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop2']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop3']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop4']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop5']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop6']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop7']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop8']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop9']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['prop10']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['directions']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['operatorNotes']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['customerId']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['dateCreated']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['createdByUser']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['dateModified']"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['modifiedByUser']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop1']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop2']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop3']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop4']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop5']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop6']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop7']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop8']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop9']"
+											}
+										},
+										{
+											"source": {
+												"path": "['prop10']"
+											}
+										},
+										{
+											"source": {
+												"path": "['canUseAnyDepot']"
+											}
+										},
+										{
+											"source": {
+												"path": "['currentFlag']"
+											}
+										},
+										{
+											"source": {
+												"path": "['onHold']"
 											},
 											"sink": {
-												"name": "fax",
-												"type": "String"
+												"name": "On Hold",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['name']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['shortCode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['name']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['line1']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['line2']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['line3']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['town']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['county']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['postcode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['telephone']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['fax']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['latitude']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['longitude']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['what3Words']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop1']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop2']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop3']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop4']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop5']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop6']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop7']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop8']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop9']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['prop10']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['directions']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['operatorNotes']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['customerId']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['dateCreated']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['createdByUser']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['dateModified']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['modifiedByUser']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['currency']"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['accountsDept']"
+											}
+										},
+										{
+											"source": {
+												"path": "['parentCustomer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['alternateName']"
+											}
+										},
+										{
+											"source": {
+												"path": "['regNumber']"
 											}
 										},
 										{
 											"source": {
 												"path": "['email']"
-											},
-											"sink": {
-												"name": "email",
-												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['vatNumber']"
+											}
+										},
+										{
+											"source": {
+												"path": "['cisRegNumber']"
+											}
+										},
+										{
+											"source": {
+												"path": "['salesperson']"
+											}
+										},
+										{
+											"source": {
+												"path": "['webSite']"
+											}
+										},
+										{
+											"source": {
+												"path": "['exportToAccounts']"
+											}
+										},
+										{
+											"source": {
+												"path": "['creditLimit']"
+											}
+										},
+										{
+											"source": {
+												"path": "['accountBalance']"
+											}
+										},
+										{
+											"source": {
+												"path": "['dateModified']"
+											}
+										},
+										{
+											"source": {
+												"path": "['modifiedBy']['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "['modifiedBy']['name']"
+											}
+										},
+										{
+											"source": {
+												"path": "['modifiedBy']['serverLogon']"
+											}
+										},
+										{
+											"source": {
+												"path": "['modifiedBy']['email']"
+											}
+										},
+										{
+											"source": {
+												"path": "['modifiedBy']['defaultDepot']"
+											}
+										},
+										{
+											"source": {
+												"path": "['modifiedBy']['isActive']"
+											}
+										},
+										{
+											"source": {
+												"path": "['modifiedBy']['isSharedLogon']"
+											}
+										},
+										{
+											"source": {
+												"path": "['modifiedBy']['isSalesAppUser']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdDate']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdBy']['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdBy']['name']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdBy']['serverLogon']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdBy']['email']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdBy']['defaultDepot']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdBy']['isActive']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdBy']['isSharedLogon']"
+											}
+										},
+										{
+											"source": {
+												"path": "['createdBy']['isSalesAppUser']"
+											}
+										},
+										{
+											"source": {
+												"path": "['paymentTermText']"
+											}
+										},
+										{
+											"source": {
+												"path": "['marketingGroups']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['page']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['pageSize']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['totalItemCount']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['lastPage']"
 											}
 										}
 									],

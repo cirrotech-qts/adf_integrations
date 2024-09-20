@@ -347,7 +347,7 @@
 											},
 											"sink": {
 												"name": "On Hold",
-												"type": "Int32"
+												"type": "String"
 											}
 										}
 									],

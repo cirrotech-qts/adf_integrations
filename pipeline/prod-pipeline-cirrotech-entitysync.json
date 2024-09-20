@@ -343,6 +343,15 @@
 										},
 										{
 											"source": {
+												"path": "['prop10']"
+											},
+											"sink": {
+												"name": "No_",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
 												"path": "['onHold']"
 											},
 											"sink": {

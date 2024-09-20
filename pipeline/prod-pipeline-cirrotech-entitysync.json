@@ -332,6 +332,15 @@
 										},
 										{
 											"source": {
+												"path": "['accNo']"
+											},
+											"sink": {
+												"name": "accNo",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
 												"path": "['address']['name']"
 											},
 											"sink": {

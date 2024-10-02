@@ -562,76 +562,10 @@
 				}
 			},
 			{
-				"name": "Stored procedure UpdateExportToSynrix",
-				"description": "Check if No_ exists in both SQL tables and marks for update",
-				"type": "SqlServerStoredProcedure",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "ForEach page number",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[dbo].[UpdateExportToSynrix]"
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureSqlSyncDB",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
-				"name": "Stored procedure MarkBCEntriesForExport",
-				"type": "SqlServerStoredProcedure",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "Stored procedure UpdateExportToSynrix",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[dbo].[MarkBCEntriesForExport]"
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureSqlSyncDB",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
 				"name": "Lookup customer_from_BC",
 				"description": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE exportToSynrix = 1;",
 				"type": "Lookup",
-				"dependsOn": [
-					{
-						"activity": "Stored procedure MarkBCEntriesForExport",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -658,14 +592,7 @@
 				"name": "ForEach Export Create New Item",
 				"description": "Loop around items marked for export and make API call to create or update item.",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Lookup customer_from_BC",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -829,14 +756,7 @@
 			{
 				"name": "ForEach Export Update Item",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Lookup customer_from_Syrinx",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -962,45 +882,10 @@
 				}
 			},
 			{
-				"name": "Stored procedure CompareAndSetExportToSynrixUpdates",
-				"description": "CompareAndSetExportToSynrixUpdates",
-				"type": "SqlServerStoredProcedure",
-				"dependsOn": [
-					{
-						"activity": "ForEach Export Create New Item",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[dbo].[CompareAndSetExportToSynrixUpdates]"
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureSqlSyncDB",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
 				"name": "Lookup customer_from_Syrinx",
 				"description": "SELECT \n      [name]\n      ,[telephone]\n      ,[fax]\n      ,[email]\n      ,[dateAdded]\n      ,[modifiedDate]\n      ,[customerId]\n      ,[currencyId]\n      ,[companyAccNo]\n      ,[postcode]\n      ,[country]\n      ,[Global Dimension 1 Code]\n      ,[Our Account No_]\n      ,[Address]\n      ,[Address 2]\n      ,[City]\n      ,[County]\n      ,[Post Code]\n      ,[Phone No_]\n      ,[Fax No_]\n      ,[Salesperson Code]\n      ,[VAT Registration No_]\n      ,[E-Mail]\n      ,[Preferred Bank Account Code]\n      ,[Location Code]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE exportToSynrixUpdates= 1;",
 				"type": "Lookup",
-				"dependsOn": [
-					{
-						"activity": "Stored procedure CompareAndSetExportToSynrixUpdates",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,

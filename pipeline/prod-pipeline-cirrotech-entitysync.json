@@ -926,7 +926,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Disable_In_Prod",
+						"activity": "Disable_In_Prod Create Test Items",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -1009,9 +1009,16 @@
 				}
 			},
 			{
-				"name": "Add Test Items",
+				"name": "Disable_In_Prod Create Test Items",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Disable_In_Prod",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,

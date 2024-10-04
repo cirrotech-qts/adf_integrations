@@ -657,7 +657,7 @@
 									{
 										"type": "A",
 										"name": "@item().No_",
-										"accNo": "",
+										"accNo": "@item().No_",
 										"taxCode": "",
 										"locTaxCode": "",
 										"internal": true,

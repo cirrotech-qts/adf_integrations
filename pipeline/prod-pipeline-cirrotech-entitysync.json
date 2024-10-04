@@ -684,7 +684,7 @@
 										"prop10": "",
 										"currentFlag": true,
 										"canUseAnyDepot": true,
-										"onHold": "@item().Account Blocked",
+										"onHold": "@{variables('Account Blocked')}",
 										"depot": {
 											"id": 1,
 											"name": "@item().Description",

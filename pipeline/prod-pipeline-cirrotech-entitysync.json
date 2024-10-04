@@ -976,7 +976,7 @@
 				}
 			},
 			{
-				"name": "Disable_In_Prod",
+				"name": "Disable_In_Prod 10 items",
 				"description": "Trims DB to 10 items for testing",
 				"type": "Lookup",
 				"dependsOn": [
@@ -1013,7 +1013,7 @@
 				"type": "Lookup",
 				"dependsOn": [
 					{
-						"activity": "Disable_In_Prod",
+						"activity": "Disable_In_Prod 10 items",
 						"dependencyConditions": [
 							"Succeeded"
 						]

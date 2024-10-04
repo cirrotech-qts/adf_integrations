@@ -979,6 +979,8 @@
 				"name": "Disable_In_Prod 10 items",
 				"description": "Trims DB to 10 items for testing",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "ForEach page number",
@@ -1011,6 +1013,8 @@
 			{
 				"name": "Disable_In_Prod Create Test Items",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Disable_In_Prod 10 items",

@@ -619,8 +619,6 @@
 						{
 							"name": "Update or Create Customers in Syrinx_copy1",
 							"type": "WebActivity",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "If Condition2",

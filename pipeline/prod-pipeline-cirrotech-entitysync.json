@@ -612,7 +612,14 @@
 						{
 							"name": "Update or Create Customers in Syrinx_copy1",
 							"type": "WebActivity",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "If Condition2",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -724,39 +731,52 @@
 							}
 						},
 						{
-							"name": "Stored procedure UpdateExportToSynrixComplete",
-							"type": "SqlServerStoredProcedure",
+							"name": "If Condition2",
+							"type": "IfCondition",
 							"dependsOn": [
 								{
-									"activity": "Update or Create Customers in Syrinx_copy1",
+									"activity": "Account Blocked",
 									"dependencyConditions": [
 										"Succeeded"
 									]
 								}
 							],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@if(equals(item().Blocked, 1), 'True', 'False')",
+									"type": "Expression"
+								},
+								"ifTrueActivities": [
+									{
+										"name": "Set variable Account Blocked True",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"policy": {
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "Account Blocked",
+											"value": "True"
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "Account Blocked",
+							"type": "SetVariable",
+							"dependsOn": [],
 							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
 								"secureInput": false
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "[dbo].[UpdateExportToSynrixComplete]",
-								"storedProcedureParameters": {
-									"No_": {
-										"value": {
-											"value": "@item().No_",
-											"type": "Expression"
-										},
-										"type": "String"
-									}
-								}
-							},
-							"linkedServiceName": {
-								"referenceName": "AzureSqlSyncDB",
-								"type": "LinkedServiceReference"
+								"variableName": "Account Blocked",
+								"value": "False"
 							}
 						}
 					]
@@ -1066,6 +1086,9 @@
 			},
 			"loopCounter": {
 				"type": "Integer"
+			},
+			"Account Blocked": {
+				"type": "String"
 			}
 		},
 		"folder": {

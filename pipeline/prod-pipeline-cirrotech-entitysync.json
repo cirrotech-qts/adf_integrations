@@ -6,6 +6,8 @@
 				"name": "Clear SQL tables",
 				"description": "Clear all tables before getting data",
 				"type": "SqlServerStoredProcedure",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",

@@ -264,6 +264,8 @@
 			{
 				"name": "ForEach page number",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "loopCounter",

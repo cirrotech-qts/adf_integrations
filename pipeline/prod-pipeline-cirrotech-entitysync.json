@@ -26,6 +26,8 @@
 			{
 				"name": "Copy SQL data from BC SQL to temp",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Clear SQL tables",

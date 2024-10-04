@@ -654,8 +654,8 @@
 								"body": [
 									{
 										"type": "A",
-										"name": "@item().name",
-										"accNo": "@item().No_",
+										"name": "@item().No_",
+										"accNo": "",
 										"taxCode": "",
 										"locTaxCode": "",
 										"internal": true,
@@ -683,13 +683,13 @@
 										"prop7": "",
 										"prop8": "",
 										"prop9": "",
-										"prop10": "@item().No_",
+										"prop10": "",
 										"currentFlag": true,
 										"canUseAnyDepot": true,
-										"onHold": false,
+										"onHold": "@item().Account Blocked",
 										"depot": {
 											"id": 1,
-											"name": "",
+											"name": "@item().Description",
 											"shortCode": "",
 											"address": {
 												"id": 2,
@@ -725,8 +725,8 @@
 											}
 										},
 										"exportToAccounts": false,
-										"creditLimit": 1000,
-										"accountBalance": 500,
+										"creditLimit": null,
+										"accountBalance": null,
 										"email": "",
 										"vatNumber": "",
 										"regNumber": "",

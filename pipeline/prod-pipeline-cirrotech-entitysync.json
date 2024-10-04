@@ -565,6 +565,8 @@
 				"name": "Lookup customer_from_BC",
 				"description": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE exportToSynrix = 1;",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -592,6 +594,8 @@
 				"name": "ForEach Export Create New Item",
 				"description": "Loop around items marked for export and make API call to create or update item.",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
@@ -756,6 +760,8 @@
 			{
 				"name": "ForEach Export Update Item",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
@@ -885,6 +891,8 @@
 				"name": "Lookup customer_from_Syrinx",
 				"description": "SELECT \n      [name]\n      ,[telephone]\n      ,[fax]\n      ,[email]\n      ,[dateAdded]\n      ,[modifiedDate]\n      ,[customerId]\n      ,[currencyId]\n      ,[companyAccNo]\n      ,[postcode]\n      ,[country]\n      ,[Global Dimension 1 Code]\n      ,[Our Account No_]\n      ,[Address]\n      ,[Address 2]\n      ,[City]\n      ,[County]\n      ,[Post Code]\n      ,[Phone No_]\n      ,[Fax No_]\n      ,[Salesperson Code]\n      ,[VAT Registration No_]\n      ,[E-Mail]\n      ,[Preferred Bank Account Code]\n      ,[Location Code]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE exportToSynrixUpdates= 1;",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -906,6 +914,60 @@
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "Stored procedure SyncNewCustomersToSyrinx",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "ForEach page number",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[SyncNewCustomersToSyrinx]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlSyncDB",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Stored procedure SyncUpdateCustomersToSyrinx",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Stored procedure SyncNewCustomersToSyrinx",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[SyncUpdateCustomersToSyrinx]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlSyncDB",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],

@@ -928,7 +928,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Lookup1",
+						"activity": "Disable_In_Prod",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -978,7 +978,8 @@
 				}
 			},
 			{
-				"name": "Lookup1",
+				"name": "Disable_In_Prod",
+				"description": "Trims DB to 10 items for testing",
 				"type": "Lookup",
 				"dependsOn": [
 					{

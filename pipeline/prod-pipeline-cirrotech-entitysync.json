@@ -796,8 +796,6 @@
 			{
 				"name": "ForEach Export Update Item",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "ForEach Export Create New Item",

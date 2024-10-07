@@ -9,57 +9,27 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "id",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "name",
+				"name": "Site Name",
 				"type": "nvarchar"
 			},
 			{
-				"name": "telephone",
+				"name": "Customer Name",
 				"type": "nvarchar"
 			},
 			{
-				"name": "fax",
+				"name": "On Hold",
 				"type": "nvarchar"
 			},
 			{
-				"name": "email",
+				"name": "No_",
 				"type": "nvarchar"
 			},
 			{
-				"name": "dateAdded",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"name": "exportToSynrix",
+				"type": "bit"
 			},
 			{
-				"name": "modifiedDate",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
-			},
-			{
-				"name": "customerId",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "currencyId",
-				"type": "uniqueidentifier"
-			},
-			{
-				"name": "companyAccNo",
-				"type": "nvarchar"
-			},
-			{
-				"name": "postcode",
-				"type": "nvarchar"
-			},
-			{
-				"name": "country",
+				"name": "accNo",
 				"type": "nvarchar"
 			}
 		],

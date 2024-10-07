@@ -354,10 +354,19 @@
 										},
 										{
 											"source": {
-												"path": "['prop10']"
+												"path": "['address']['line1']"
 											},
 											"sink": {
-												"name": "No_",
+												"name": "line1",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['address']['town']"
+											},
+											"sink": {
+												"name": "town",
 												"type": "String"
 											}
 										},
@@ -367,6 +376,24 @@
 											},
 											"sink": {
 												"name": "On Hold",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['line1']"
+											},
+											"sink": {
+												"name": "depot_line1",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['depot']['address']['town']"
+											},
+											"sink": {
+												"name": "depot_town",
 												"type": "String"
 											}
 										}

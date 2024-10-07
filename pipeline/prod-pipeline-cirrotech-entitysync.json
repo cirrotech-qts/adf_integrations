@@ -819,6 +819,8 @@
 			{
 				"name": "ForEach Export Update Item",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup customer_from_BC_Update",
@@ -1076,7 +1078,7 @@
 			},
 			{
 				"name": "Lookup customer_from_BC_Update",
-				"description": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE syncToSynrix = 1;",
+				"description": "SELECT* \n  FROM [dbo].[customer_from_BC]\n  WHERE syncToSynrix = 1;",
 				"type": "Lookup",
 				"dependsOn": [
 					{
@@ -1097,7 +1099,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE syncToSynrix = 1;",
+						"sqlReaderQuery": "SELECT* \n  FROM [dbo].[customer_from_BC]\n  WHERE syncToSynrix = 1;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

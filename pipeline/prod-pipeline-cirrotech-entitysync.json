@@ -819,8 +819,6 @@
 			{
 				"name": "ForEach Export Update Item",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup customer_from_BC_Update",

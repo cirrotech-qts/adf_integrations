@@ -566,7 +566,7 @@
 				}
 			},
 			{
-				"name": "Lookup customer_from_BC",
+				"name": "Lookup customer_from_BC_Create",
 				"description": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE exportToSynrix = 1;",
 				"type": "Lookup",
 				"dependsOn": [
@@ -607,7 +607,7 @@
 				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
-						"activity": "Lookup customer_from_BC",
+						"activity": "Lookup customer_from_BC_Create",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -798,7 +798,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "ForEach Export Create New Item",
+						"activity": "Lookup customer_from_BC_Update",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -1049,6 +1049,40 @@
 						"referenceName": "AzureSQL_CustomersFromBC",
 						"type": "DatasetReference"
 					}
+				}
+			},
+			{
+				"name": "Lookup customer_from_BC_Update",
+				"description": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE syncToSynrix = 1;",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "ForEach Export Create New Item",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE syncToSynrix = 1;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "AzureSQL_CustomersFromBC",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
 				}
 			}
 		],

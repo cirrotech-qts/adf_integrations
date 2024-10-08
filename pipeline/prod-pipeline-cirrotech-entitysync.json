@@ -1206,7 +1206,7 @@
 					},
 					"body": [
 						{
-							"type": "Customer",
+							"type": "A",
 							"name": "John Doe",
 							"accNo": "CUST12345",
 							"customerType": "A",

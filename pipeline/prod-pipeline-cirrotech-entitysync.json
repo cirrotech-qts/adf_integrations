@@ -680,92 +680,10 @@
 									"referenceName": "QTSOnPrem",
 									"type": "IntegrationRuntimeReference"
 								},
-								"body": [
-									{
-										"type": "A",
-										"name": "@item().No_",
-										"accNo": "@item().No_",
-										"taxCode": "",
-										"locTaxCode": "",
-										"internal": true,
-										"companyType": "Individual",
-										"currencyCode": "GBP",
-										"address": {
-											"name": "Example Name",
-											"line1": "123 Example Street",
-											"line2": "Suite 100",
-											"line3": "",
-											"town": "SampleTown",
-											"county": "SampleCounty",
-											"postcode": "AB12 3CD",
-											"telephone": "1234567890",
-											"fax": null,
-											"latitude": "",
-											"longitude": "",
-											"what3Words": "",
-											"directions": null
-										},
-										"countryCode": "GB",
-										"marketingCategory": "",
-										"prop1": "",
-										"prop6": "",
-										"prop7": "",
-										"prop8": "",
-										"prop9": "",
-										"prop10": "",
-										"currentFlag": true,
-										"canUseAnyDepot": true,
-										"onHold": "@{variables('Account Blocked')}",
-										"depot": {
-											"id": 1,
-											"name": "@item().Description",
-											"shortCode": "",
-											"address": {
-												"id": 2,
-												"name": "Depot Name",
-												"line1": "456 Depot Lane",
-												"line2": "Warehouse 2",
-												"line3": null,
-												"town": "DepotTown",
-												"county": "DepotCounty",
-												"postcode": "XY98 7ZW",
-												"telephone": "0987654321",
-												"fax": null,
-												"latitude": null,
-												"longitude": null,
-												"what3Words": null,
-												"prop1": null,
-												"prop2": null,
-												"prop3": null,
-												"prop4": null,
-												"prop5": null,
-												"prop6": null,
-												"prop7": null,
-												"prop8": null,
-												"prop9": null,
-												"prop10": "",
-												"directions": null,
-												"operatorNotes": null,
-												"customerId": null,
-												"dateCreated": null,
-												"createdByUser": null,
-												"dateModified": null,
-												"modifiedByUser": null
-											}
-										},
-										"exportToAccounts": false,
-										"creditLimit": null,
-										"accountBalance": null,
-										"email": "",
-										"vatNumber": "",
-										"regNumber": "",
-										"cisRegNumber": "",
-										"webSite": "",
-										"paymentTermText": {
-											"id": null
-										}
-									}
-								]
+								"body": {
+									"value": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"\",\n        \"accNo\": \"\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": @{variables('Account Blocked')},\n        \"address\": {\n            \"name\": \"\",\n            \"line1\": \"\",\n\t    \"town\": \"SampleTown\",\n        }\n    }\n]",
+									"type": "Expression"
+								}
 							}
 						},
 						{
@@ -1031,92 +949,10 @@
 									"referenceName": "QTSOnPrem",
 									"type": "IntegrationRuntimeReference"
 								},
-								"body": [
-									{
-										"type": "",
-										"name": "",
-										"accNo": "",
-										"taxCode": "",
-										"locTaxCode": "",
-										"internal": true,
-										"companyType": "Individual",
-										"currencyCode": "GBP",
-										"address": {
-											"name": "",
-											"line1": "",
-											"line2": "",
-											"line3": "",
-											"town": "",
-											"county": "",
-											"postcode": "",
-											"telephone": "",
-											"fax": null,
-											"latitude": "",
-											"longitude": "",
-											"what3Words": "",
-											"directions": null
-										},
-										"countryCode": "GB",
-										"marketingCategory": "",
-										"prop1": "",
-										"prop6": "",
-										"prop7": "",
-										"prop8": "",
-										"prop9": "",
-										"prop10": "",
-										"currentFlag": true,
-										"canUseAnyDepot": true,
-										"onHold": "",
-										"depot": {
-											"id": 1,
-											"name": "",
-											"shortCode": "",
-											"address": {
-												"id": 2,
-												"name": "",
-												"line1": "",
-												"line2": "",
-												"line3": null,
-												"town": "",
-												"county": "",
-												"postcode": "",
-												"telephone": "",
-												"fax": null,
-												"latitude": null,
-												"longitude": null,
-												"what3Words": null,
-												"prop1": null,
-												"prop2": null,
-												"prop3": null,
-												"prop4": null,
-												"prop5": null,
-												"prop6": null,
-												"prop7": null,
-												"prop8": null,
-												"prop9": null,
-												"prop10": "",
-												"directions": null,
-												"operatorNotes": null,
-												"customerId": null,
-												"dateCreated": null,
-												"createdByUser": null,
-												"dateModified": null,
-												"modifiedByUser": null
-											}
-										},
-										"exportToAccounts": false,
-										"creditLimit": null,
-										"accountBalance": null,
-										"email": "",
-										"vatNumber": "",
-										"regNumber": "",
-										"cisRegNumber": "",
-										"webSite": "",
-										"paymentTermText": {
-											"id": null
-										}
-									}
-								]
+								"body": {
+									"value": "[\n    {\n        \"type\": \"A\",\n        \"name\": \",\n        \"accNo\": \"\"\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": @{variables('Account Blocked')},\n        \"address\": {\n            \"name\": \"\",\n            \"line1\": \"\",\n\t    \"town\": \"SampleTown\",\n        }\n    }\n]",
+									"type": "Expression"
+								}
 							}
 						},
 						{

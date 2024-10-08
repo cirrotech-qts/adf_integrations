@@ -1210,13 +1210,7 @@
 							"name": "Example Name",
 							"accNo": "CUST12345",
 							"companyType": "Individual",
-							"currencyCode": "GBP",
-							"address": {
-								"name": "Example Name",
-								"line1": "123 Example Street",
-								"town": "SampleTown",
-								"postcode": "AB12 3CD"
-							}
+							"currencyCode": "GBP"
 						}
 					]
 				}

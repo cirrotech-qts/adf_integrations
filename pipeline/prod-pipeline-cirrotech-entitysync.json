@@ -1204,7 +1204,23 @@
 						"referenceName": "QTSOnPrem",
 						"type": "IntegrationRuntimeReference"
 					},
-					"body": "[\n    {\n        \"type\": \"Customer\",\n        \"name\": \"John Doe\",\n        \"accNo\": \"CUST12345\",\n        \"companyType\": \"A\",  // Set to one of A, C, or P as required\n        \"currencyCode\": \"GBP\",\n        \"address\": {\n            \"name\": \"John Doe\",\n            \"line1\": \"123 Main Street\",\n            \"town\": \"Glasgow\",\n            \"postcode\": \"G1 1AA\"\n        },\n        \"countryCode\": \"GB\",\n        \"onHold\": false\n    }\n]\n"
+					"body": [
+						{
+							"type": "Customer",
+							"name": "John Doe",
+							"accNo": "CUST12345",
+							"companyType": "A",
+							"currencyCode": "GBP",
+							"address": {
+								"name": "John Doe",
+								"line1": "123 Main Street",
+								"town": "Glasgow",
+								"postcode": "G1 1AA"
+							},
+							"countryCode": "GB",
+							"onHold": false
+						}
+					]
 				}
 			}
 		],

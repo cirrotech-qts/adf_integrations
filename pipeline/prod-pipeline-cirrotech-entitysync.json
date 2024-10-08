@@ -817,143 +817,6 @@
 				}
 			},
 			{
-				"name": "ForEach Export Update Item",
-				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "Lookup customer_from_BC_Update",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Lookup customer_from_BC_Update').output.value",
-						"type": "Expression"
-					},
-					"activities": [
-						{
-							"name": "Update or Create Customers in Syrinx_copy1_copy1",
-							"type": "WebActivity",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"method": "POST",
-								"headers": {
-									"Authorization": {
-										"value": "@concat('Bearer ', variables('Syrinx Token'))\n",
-										"type": "Expression"
-									},
-									"Content-Type": "application/json"
-								},
-								"url": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Customers",
-								"connectVia": {
-									"referenceName": "QTSOnPrem",
-									"type": "IntegrationRuntimeReference"
-								},
-								"body": [
-									{
-										"type": "A",
-										"name": "@item().No_",
-										"accNo": "@item().No_",
-										"taxCode": "",
-										"locTaxCode": "",
-										"internal": true,
-										"companyType": "Individual",
-										"currencyCode": "GBP",
-										"address": {
-											"name": "@item().Description",
-											"line1": "@item().line1",
-											"line2": "",
-											"line3": "",
-											"town": "",
-											"county": "",
-											"postcode": "",
-											"telephone": "",
-											"fax": null,
-											"latitude": "",
-											"longitude": "",
-											"what3Words": "",
-											"directions": null
-										},
-										"countryCode": "GB",
-										"marketingCategory": "",
-										"prop1": "",
-										"prop6": "",
-										"prop7": "",
-										"prop8": "",
-										"prop9": "",
-										"prop10": "",
-										"currentFlag": true,
-										"canUseAnyDepot": true,
-										"onHold": "@{variables('Account Blocked')}",
-										"depot": {
-											"id": 1,
-											"name": "@item().depot_line1",
-											"shortCode": "",
-											"address": {
-												"id": 2,
-												"name": "@item().depot_line1",
-												"line1": "",
-												"line2": "",
-												"line3": null,
-												"town": "",
-												"county": "",
-												"postcode": "",
-												"telephone": "",
-												"fax": null,
-												"latitude": null,
-												"longitude": null,
-												"what3Words": null,
-												"prop1": null,
-												"prop2": null,
-												"prop3": null,
-												"prop4": null,
-												"prop5": null,
-												"prop6": null,
-												"prop7": null,
-												"prop8": null,
-												"prop9": null,
-												"prop10": "",
-												"directions": null,
-												"operatorNotes": null,
-												"customerId": null,
-												"dateCreated": null,
-												"createdByUser": null,
-												"dateModified": null,
-												"modifiedByUser": null
-											}
-										},
-										"exportToAccounts": false,
-										"creditLimit": null,
-										"accountBalance": null,
-										"email": "",
-										"vatNumber": "",
-										"regNumber": "",
-										"cisRegNumber": "",
-										"webSite": "",
-										"paymentTermText": {
-											"id": null
-										}
-									}
-								]
-							}
-						}
-					]
-				}
-			},
-			{
 				"name": "Stored procedure SyncNewCustomersToSyrinx",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
@@ -1108,6 +971,200 @@
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach Export Update Item",
+				"description": "Loop around items marked for export and make API call to create or update item.",
+				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "Lookup customer_from_BC_Update",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup customer_from_BC_Create').output.value",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Update or Create Customers in Syrinx_copy1_copy1",
+							"type": "WebActivity",
+							"dependsOn": [
+								{
+									"activity": "If Condition2_copy1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"method": "POST",
+								"headers": {
+									"Authorization": {
+										"value": "@concat('Bearer ', variables('Syrinx Token'))\n",
+										"type": "Expression"
+									},
+									"Content-Type": "application/json"
+								},
+								"url": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Customers",
+								"connectVia": {
+									"referenceName": "QTSOnPrem",
+									"type": "IntegrationRuntimeReference"
+								},
+								"body": [
+									{
+										"type": "",
+										"name": "",
+										"accNo": "",
+										"taxCode": "",
+										"locTaxCode": "",
+										"internal": true,
+										"companyType": "Individual",
+										"currencyCode": "GBP",
+										"address": {
+											"name": "",
+											"line1": "",
+											"line2": "",
+											"line3": "",
+											"town": "",
+											"county": "",
+											"postcode": "",
+											"telephone": "",
+											"fax": null,
+											"latitude": "",
+											"longitude": "",
+											"what3Words": "",
+											"directions": null
+										},
+										"countryCode": "GB",
+										"marketingCategory": "",
+										"prop1": "",
+										"prop6": "",
+										"prop7": "",
+										"prop8": "",
+										"prop9": "",
+										"prop10": "",
+										"currentFlag": true,
+										"canUseAnyDepot": true,
+										"onHold": "",
+										"depot": {
+											"id": 1,
+											"name": "",
+											"shortCode": "",
+											"address": {
+												"id": 2,
+												"name": "",
+												"line1": "",
+												"line2": "",
+												"line3": null,
+												"town": "",
+												"county": "",
+												"postcode": "",
+												"telephone": "",
+												"fax": null,
+												"latitude": null,
+												"longitude": null,
+												"what3Words": null,
+												"prop1": null,
+												"prop2": null,
+												"prop3": null,
+												"prop4": null,
+												"prop5": null,
+												"prop6": null,
+												"prop7": null,
+												"prop8": null,
+												"prop9": null,
+												"prop10": "",
+												"directions": null,
+												"operatorNotes": null,
+												"customerId": null,
+												"dateCreated": null,
+												"createdByUser": null,
+												"dateModified": null,
+												"modifiedByUser": null
+											}
+										},
+										"exportToAccounts": false,
+										"creditLimit": null,
+										"accountBalance": null,
+										"email": "",
+										"vatNumber": "",
+										"regNumber": "",
+										"cisRegNumber": "",
+										"webSite": "",
+										"paymentTermText": {
+											"id": null
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "If Condition2_copy1",
+							"type": "IfCondition",
+							"dependsOn": [
+								{
+									"activity": "Account Blocked_copy1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@if(equals(item().Blocked, 1), 'True', 'False')",
+									"type": "Expression"
+								},
+								"ifTrueActivities": [
+									{
+										"name": "Set variable Account Blocked True_copy1",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"policy": {
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "Account Blocked",
+											"value": "True"
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "Account Blocked_copy1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Account Blocked",
+								"value": "False"
+							}
+						}
+					]
 				}
 			}
 		],

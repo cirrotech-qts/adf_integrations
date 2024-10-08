@@ -681,7 +681,7 @@
 									"type": "IntegrationRuntimeReference"
 								},
 								"body": {
-									"value": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"\",\n        \"accNo\": \"\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": @{variables('Account Blocked')},\n        \"address\": {\n            \"name\": \"\",\n            \"line1\": \"\",\n\t    \"town\": \"SampleTown\",\n        }\n    }\n]",
+									"value": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"@{item().No_}\",\n        \"accNo\": \"@{item().No_}\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": @{variables('Account Blocked')},\n        \"address\": {\n            \"name\": \"@{item().Description}\",\n            \"line1\": \"@{item().line1}\",\n\t    \"town\": \"SampleTown\",\n        }\n    }\n]",
 									"type": "Expression"
 								}
 							}
@@ -950,7 +950,7 @@
 									"type": "IntegrationRuntimeReference"
 								},
 								"body": {
-									"value": "[\n    {\n        \"type\": \"A\",\n        \"name\": \",\n        \"accNo\": \"\"\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": @{variables('Account Blocked')},\n        \"address\": {\n            \"name\": \"\",\n            \"line1\": \"\",\n\t    \"town\": \"SampleTown\",\n        }\n    }\n]",
+									"value": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"@{item().No_}\",\n        \"accNo\": \"@{item().No_}\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": @{variables('Account Blocked')},\n        \"address\": {\n            \"name\": \"@{item().Description}\",\n            \"line1\": \"@{item().line1}\",\n\t    \"town\": \"SampleTown\",\n        }\n    }\n]",
 									"type": "Expression"
 								}
 							}

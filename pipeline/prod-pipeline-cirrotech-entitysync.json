@@ -1216,12 +1216,6 @@
 								"line1": "123 Example Street",
 								"town": "SampleTown",
 								"postcode": "AB12 3CD"
-							},
-							"countryCode": "GBR",
-							"onHold": false,
-							"depot": {
-								"id": 1,
-								"name": "Depot Name"
 							}
 						}
 					]

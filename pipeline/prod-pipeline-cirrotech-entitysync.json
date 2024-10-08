@@ -1209,7 +1209,7 @@
 							"type": "Customer",
 							"name": "John Doe",
 							"accNo": "CUST12345",
-							"companyType": "A",
+							"customerType": "A",
 							"currencyCode": "GBP",
 							"address": {
 								"name": "John Doe",

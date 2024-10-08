@@ -743,7 +743,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Disable_In_Prod Create Test Items",
+						"activity": "ForEach page number",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -790,75 +790,6 @@
 				"linkedServiceName": {
 					"referenceName": "AzureSqlSyncDB",
 					"type": "LinkedServiceReference"
-				}
-			},
-			{
-				"name": "Disable_In_Prod 10 items",
-				"description": "Trims DB to 10 items for testing",
-				"type": "Lookup",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "ForEach page number",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "\nSELECT \n    [No_]\nINTO \n    #RowsToKeep\nFROM \n    (SELECT \n        [No_],\n        ROW_NUMBER() OVER (ORDER BY [No_]) AS RowNum\n     FROM \n        [customer_from_BC]) AS BC_CTE\nWHERE \n    RowNum <= 10;\n\n\nDELETE FROM [customer_from_BC]\nWHERE [No_] NOT IN (SELECT [No_] FROM #RowsToKeep);\n\n\nDROP TABLE #RowsToKeep;\n",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "AzureSQL_CustomersFromBC",
-						"type": "DatasetReference"
-					}
-				}
-			},
-			{
-				"name": "Disable_In_Prod Create Test Items",
-				"type": "Lookup",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "Disable_In_Prod 10 items",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "INSERT INTO [customer_from_BC] ([No_], [Description], [Blocked], [exportToSynrix], [syncToSynrix])\nVALUES \n    ('AG20-900010', 'Head Office', 0, 0, 0), -- Assuming 'False' is represented as 0 for [Blocked]\n    ('JT21-000003', 'Head Office', 0, 0, 0); -- Assuming 'False' is represented as 0 for [Blocked]\n",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "AzureSQL_CustomersFromBC",
-						"type": "DatasetReference"
-					}
 				}
 			},
 			{

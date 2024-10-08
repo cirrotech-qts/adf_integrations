@@ -1204,7 +1204,7 @@
 						"referenceName": "QTSOnPrem",
 						"type": "IntegrationRuntimeReference"
 					},
-					"body": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"@item().No_\",\n        \"accNo\": \"@item().No_\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n\t\"onHold\": False,\n        \"address\": {\n            \"name\": \"@item().Description\",\n            \"line1\": \"@item().line1\",\n        }\n    }\n]"
+					"body": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"@item().No_\",\n        \"accNo\": \"@item().No_\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n\t\"onHold\": False,\n        \"address\": {\n            \"name\": \"Test\",\n            \"line1\": \"Test\",\n        }\n    }\n]"
 				}
 			}
 		],

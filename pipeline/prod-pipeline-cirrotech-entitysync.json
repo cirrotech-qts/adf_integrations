@@ -157,7 +157,7 @@
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "Update or Create Customers in Syrinx_copy1_copy2",
+						"activity": "Syrinx API Test",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -1008,8 +1008,11 @@
 				}
 			},
 			{
-				"name": "Update or Create Customers in Syrinx_copy1_copy2",
+				"name": "Syrinx API Test",
+				"description": "DISABLE IN PRODUCTION",
 				"type": "WebActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Syrinx Auth Token",

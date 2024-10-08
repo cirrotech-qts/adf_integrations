@@ -1204,20 +1204,7 @@
 						"referenceName": "QTSOnPrem",
 						"type": "IntegrationRuntimeReference"
 					},
-					"body": [
-						{
-							"type": "A",
-							"name": "Test",
-							"accNo": "Test",
-							"companyType": "Individual",
-							"currencyCode": "GBP",
-							"onHold": false,
-							"address": {
-								"name": "Test",
-								"line1": "Test"
-							}
-						}
-					]
+					"body": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"Test\",\n        \"accNo\": \"Test\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": false,\n        \"address\": {\n            \"name\": \"Test\",\n            \"line1\": \"Test\",\n\"town\": \"SampleTown\",\n        }\n    }\n]\n"
 				}
 			}
 		],

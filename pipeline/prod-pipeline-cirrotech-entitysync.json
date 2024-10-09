@@ -6,8 +6,6 @@
 				"name": "Clear SQL tables",
 				"description": "Clear all tables before getting data",
 				"type": "SqlServerStoredProcedure",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -28,8 +26,6 @@
 			{
 				"name": "Copy SQL data from BC SQL to temp",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Clear SQL tables",
@@ -615,7 +611,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n  FROM [dbo].[customer_from_BC]\n  WHERE exportToSynrix = 1;",
+						"sqlReaderQuery": "SELECT [No_]\n      ,[Description]\n      ,[Blocked]\n      ,[exportToSynrix]\n,[line1]\n  FROM [dbo].[customer_from_BC]\n  WHERE exportToSynrix = 1;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -630,8 +626,6 @@
 				"name": "ForEach Export Create New Item",
 				"description": "Loop around items marked for export and make API call to create or update item.",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup customer_from_BC_Create",
@@ -830,8 +824,6 @@
 				"name": "ForEach Export Update Item",
 				"description": "Loop around items marked for export and make API call to create or update item.",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup customer_from_BC_Update",

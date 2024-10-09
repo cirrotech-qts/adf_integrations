@@ -124,7 +124,7 @@
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "Copy SQL data from BC SQL to temp",
+						"activity": "Get 20 Items",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -975,6 +975,33 @@
 						"type": "IntegrationRuntimeReference"
 					},
 					"body": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"Test\",\n        \"accNo\": \"Test\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": false,\n        \"address\": {\n            \"name\": \"Test\",\n            \"line1\": \"Test\",\n\"town\": \"SampleTown\",\n        }\n    }\n]\n"
+				}
+			},
+			{
+				"name": "Get 20 Items",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy SQL data from BC SQL to temp",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[KeepTop20]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlSyncDB",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],

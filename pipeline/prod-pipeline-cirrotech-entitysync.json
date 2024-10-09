@@ -634,20 +634,7 @@
 						]
 					}
 				],
-				"userProperties": [
-					{
-						"name": "No_"
-					},
-					{
-						"name": "Account Blocked"
-					},
-					{
-						"name": "Description"
-					},
-					{
-						"name": "line1"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"items": {
 						"value": "@activity('Lookup customer_from_BC_Create').output.value",
@@ -688,7 +675,7 @@
 									"type": "IntegrationRuntimeReference"
 								},
 								"body": {
-									"value": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"@{item().No_}\",\n        \"accNo\": \"@{item().No_}\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": @{variables('Account Blocked')},\n        \"address\": {\n            \"name\": \"@{item().Description}\",\n            \"line1\": \"@{item().line1}\",\n\t    \"town\": \"SampleTown\",\n        }\n    }\n]",
+									"value": "[\n    {\n        \"type\": \"A\",\n        \"name\": \"@{item().No_}\",\n        \"accNo\": \"@{item().No_}\",\n        \"companyType\": \"Individual\",\n        \"currencyCode\": \"GBP\",\n        \"onHold\": \"@{variables('Account Blocked')}\",\n        \"address\": {\n            \"name\": \"@{item().Description}\",\n            \"line1\": \"@{item().line1}\",\n            \"town\": \"SampleTown\"\n        }\n    }\n]",
 									"type": "Expression"
 								}
 							}

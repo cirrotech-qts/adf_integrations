@@ -709,7 +709,7 @@
 										"userProperties": [],
 										"typeProperties": {
 											"variableName": "Account Blocked",
-											"value": ""
+											"value": "true"
 										}
 									}
 								]

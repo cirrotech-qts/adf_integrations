@@ -1,5 +1,5 @@
 {
-	"name": "dev-pipeline-cirrotech-entitysync",
+	"name": "prod-pipeline-cirrotech-entitysync_copy1",
 	"properties": {
 		"activities": [
 			{

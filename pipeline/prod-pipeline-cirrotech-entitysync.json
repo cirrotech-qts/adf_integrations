@@ -685,7 +685,7 @@
 							"type": "IfCondition",
 							"dependsOn": [
 								{
-									"activity": "Account Blocked",
+									"activity": "Account Blocked Item Create",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -716,7 +716,7 @@
 							}
 						},
 						{
-							"name": "Account Blocked",
+							"name": "Account Blocked Item Create",
 							"type": "SetVariable",
 							"dependsOn": [],
 							"policy": {
@@ -883,7 +883,7 @@
 							"type": "IfCondition",
 							"dependsOn": [
 								{
-									"activity": "Account Blocked_copy1",
+									"activity": "Account Blocked Item Update",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -914,7 +914,7 @@
 							}
 						},
 						{
-							"name": "Account Blocked_copy1",
+							"name": "Account Blocked Item Update",
 							"type": "SetVariable",
 							"dependsOn": [],
 							"policy": {

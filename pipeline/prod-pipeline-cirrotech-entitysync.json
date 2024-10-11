@@ -835,7 +835,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup customer_from_BC_Create').output.value",
+						"value": "@activity('Lookup customer_from_BC_Update').output.value",
 						"type": "Expression"
 					},
 					"activities": [

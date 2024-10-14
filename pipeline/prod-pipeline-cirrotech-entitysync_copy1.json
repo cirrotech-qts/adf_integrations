@@ -400,14 +400,8 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "RestResourceSyrinxCustomers",
-									"type": "DatasetReference",
-									"parameters": {
-										"PageNo": {
-											"value": "@item()",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "RestResourceSyrinxCustomersLive",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [

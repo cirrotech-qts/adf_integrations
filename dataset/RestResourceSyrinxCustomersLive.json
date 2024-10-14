@@ -1,0 +1,23 @@
+{
+	"name": "RestResourceSyrinxCustomersLive",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestServiceSyrinx",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"PageNo": {
+				"type": "int"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "Customers?ChangesSince=2024-08-28",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}

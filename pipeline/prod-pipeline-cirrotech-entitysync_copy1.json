@@ -141,7 +141,7 @@
 						"Content-Type": "application/json",
 						"Accept": "application/json"
 					},
-					"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Customers",
+					"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Auth",
 					"connectVia": {
 						"referenceName": "QTSOnPrem",
 						"type": "IntegrationRuntimeReference"

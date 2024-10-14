@@ -669,7 +669,7 @@
 									},
 									"Content-Type": "application/json"
 								},
-								"url": "http://qts-syrinx-1/DemoSyrinxWebApi/api/v1.2/Customers",
+								"url": "http://qts-syrinx-1/SyrinxWebApi/api/v1.2/Customers",
 								"connectVia": {
 									"referenceName": "QTSOnPrem",
 									"type": "IntegrationRuntimeReference"

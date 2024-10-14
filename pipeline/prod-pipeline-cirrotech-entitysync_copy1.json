@@ -401,7 +401,13 @@
 							"inputs": [
 								{
 									"referenceName": "RestResourceSyrinxCustomersLive",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"PageNo": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
